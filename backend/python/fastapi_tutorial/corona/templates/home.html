@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FastAPI 框架学习-新冠案例</title>
+    <link rel="stylesheet" href="../static/semantic.css">
+    <script src="../static/jquery-3.7.0/jquery-3.7.0.min.js"></script>
+    <script src="../static/semantic.js"></script>
+</head>
+<body>
+    <div class="ui container">
+        <h2></h2>
+        <h1 style="text-align: center">新冠病毒疫情追踪器</h1>
+        <h2></h2>
+
+        <button id="filter" style="float: left" type="submit" class="ui button alert_secondary">过滤</button>
+
+        <div class="ui input">
+            <label for="city"></label><input id="city" type="text" placeholder="城市" value="Beijing">
+        </div>
+
+        <button id="sync" style="float: right" type="submit" class="ui button primary">更新</button>
+
+
+        <table class="ui celled table">
+            <thead>
+                <tr>
+                    <th>城市</th>
+                    <th>日期</th>
+                    <th>累计确诊</th>
+                    <th>累计死亡</th>
+                    <th>累计痊愈</th>
+                    <th>更新时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>北京</td>
+                    <td>2022-10-01</td>
+                    <td>200000</td>
+                    <td>100000</td>
+                    <td>0</td>
+                    <td>2022-10-01 00:00:00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
