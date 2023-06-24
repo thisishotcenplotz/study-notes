@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>表单常用的控件</title>
+    </head>
+    <body>
+        <form action="https://search.jd.com/keyword">
+            <label for="account">账户：</label>
+            <input id="account" type="text" name="account" maxlength="10"><br>
+
+            <label for="password">密码：</label>
+            <input id="password" type="password" name="pwd" maxlength="10"><br>
+
+            <label >
+                性别：
+                <input  type="radio" name="gender" value="male">男
+                <input  type="radio" name="gender" value="female">女
+            </label>
+            <br>
+
+
+            <label>
+                爱好：
+                <input type="checkbox" name="hobby" value="smoking">抽烟
+                <input type="checkbox" name="hobby" value="alcoholic">喝酒
+                <input type="checkbox" name="hobby" value="perm">烫头
+            </label>
+            <br>
+
+            <label>其他： <textarea name="others" id="" cols="16" rows="5"></textarea> </label>
+            <br>
+
+            <label>
+                籍贯：
+                <select name="born">
+                    <option value="HLE">海拉尔</option>
+                    <option value="LG">龙岗区</option>
+                    <option value="NS">南山区</option>
+                    <option value="FT">福田区</option>
+                    <option value="DPXQ">大鹏新区</option>
+                </select>
+            </label>
+            <br>
+
+
+            <!--隐藏域-->
+            <input type="hidden" name="check" value="ok">
+            <button>确认</button>
+            <input type="reset" value="重置">
+            <button type="button">检测是否账户是否被注册</button>
+        </form>
+    </body>
+</html>
