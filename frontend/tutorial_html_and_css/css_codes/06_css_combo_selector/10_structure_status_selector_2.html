@@ -7,8 +7,11 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>结构伪类选择器</title>
         <style>
-            div>p:first-child {
+            div>p:last-child {
                 color: red;
+            }
+            div>p:nth-child(-n+5) {
+                color: blue;
             }
         </style>
     </head>
@@ -18,6 +21,17 @@
             <p>李四：88</p>
             <p>王五：78</p>
             <p>赵 六：68</p>
+            <p>田七：58</p>
+            <p>老八：48</p>
+        </div>
+
+        <div>
+            <p>张三：98</p>
+            <p>李四：88</p>
+            <p>王五：78</p>
+            <p>赵 六：68</p>
+            <p>田七：58</p>
+            <p>老八：48</p>
         </div>
     </body>
 </html>
