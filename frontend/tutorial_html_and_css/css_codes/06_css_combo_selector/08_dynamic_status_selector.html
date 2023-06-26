@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>伪类选择器</title>
+        <style>
+            /*
+                下面的状态顺序是固定的。不能乱改
+            */
+            a:link {
+                color: orange;
+            }
+            a:visited {
+                color: red;
+            }
+            a:hover {
+                color: skyblue;
+            }
+            a:active {
+                color: green;
+            }
+            span:hover{
+                color: red;
+            }
+            span:active{
+                color: blue;
+            }
+            input:focus {
+                color: skyblue;
+                background-color: lightpink;
+            }
+            select:focus {
+                color: skyblue;
+                background-color: lightpink;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="https://www.jd.com">去京东</a>
+        <a href="https://www.baidu.com">去百度</a>
+        <span>
+            Scala
+        </span>
+        <br>
+        <input type="text">
+
+        <select>
+            <option value="spark">spark</option>
+            <option value="flink">flink</option>
+            <option value="mr">MapReduce</option>
+        </select> value=
+    </body>
+</html>
