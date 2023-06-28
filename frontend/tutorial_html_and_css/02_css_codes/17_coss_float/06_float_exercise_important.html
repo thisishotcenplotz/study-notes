@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>浮动综合练习（！！！重要！！！）</title>
+        <style>
+            * {
+              margin: 0;
+              padding: 0;
+            }
+            .left-fix {
+              float: left;
+            }
+            .right-fix {
+              float: right;
+            }
+            .clear-fix::after {
+              content: '';
+              display: block;
+              clear: both;
+            }
+            .container {
+              width: 960px;
+              margin: 0 auto;
+              text-align: center;
+            }
+            .page-header {
+
+            }
+            .logo {
+              width: 200px;
+            }
+            .banner1 {
+              width: 540px;
+              margin: 0 10px;
+            }
+            .banner2 {
+              width: 200px;
+            }
+            .banner1,.banner2,.logo {
+              height: 80px;
+              background-color: #ccc;
+              line-height: 80px;
+            }
+            .menu {
+              background-color: #ccc;
+              height: 30px;
+              margin-top: 10px;
+              line-height: 30px;
+            }
+            .content {
+              margin-top: 10px;
+            }
+            .item1,.item2 {
+              width: 368px;
+              height: 198px;
+              border: 1px solid black;
+              margin-right: 10px;
+              line-height: 198px;
+            }
+            .bottom {
+              margin-top: 10px;
+            }
+            .item3,.item4,.item5,.item6 {
+              width: 178px;
+              height: 198px;
+              border: 1px solid black;
+              margin-right: 10px;
+              line-height: 198px;
+            }
+            .item7,.item8,.item9 {
+              width: 198px;
+              height: 128px;
+              border: 1px solid black;
+              line-height: 128px;
+            }
+            .item8 {
+              margin: 10px 0;
+            }
+            .foot {
+              height: 60px;
+              background-color: #ccc;
+              margin-top: 10px;
+              line-height: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- 头部 -->
+            <div class="page-header clear-fix">
+              <div class="logo left-fix">logo</div>
+              <div class="banner1 left-fix">banner1</div>
+              <div class="banner2 left-fix">banner2</div>
+            </div>
+            <!-- 菜单 -->
+            <div class="menu">菜单</div>
+            <!-- 内容 -->
+            <div class="content clear-fix">
+              <!-- 左侧 -->
+              <div class="content-left left-fix">
+                <!-- 上边 -->
+                <div class="top clear-fix">
+                  <div class="item1 left-fix">栏目一</div>
+                  <div class="item2 right-fix">栏目二</div>
+                </div>
+                <!-- 下边 -->
+                <div class="bottom clear-fix">
+                  <div class="item3 left-fix">栏目三</div>
+                  <div class="item4 left-fix">栏目四</div>
+                  <div class="item5 left-fix">栏目五</div>
+                  <div class="item6 left-fix">栏目六</div>
+                </div>
+              </div>
+              <!-- 右侧 -->
+              <div class="content-right right-fix">
+                <div class="item7">栏目七</div>
+                <div class="item8">栏目八</div>
+                <div class="item9">栏目九</div>
+              </div>
+            </div>
+            <!-- 尾部 -->
+            <div class="foot">尾部</div>
+        </div>
+    </body>
+</html>
