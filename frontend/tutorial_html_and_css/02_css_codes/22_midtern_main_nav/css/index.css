@@ -1,0 +1,107 @@
+/* Initialization Setup */
+
+.container {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+/* Navigation Bar Start */
+.top-bar {
+    height: 30px;
+    background-color: #ECECEC;
+}
+.welcome {
+    height: 30px;
+    line-height: 30px;
+    font-size: 0;
+    color: #666;
+}
+.welcome span,.welcome a {
+    font-size: 12px;
+}
+.welcome .hello {
+    margin-right: 28px;
+}
+.welcome .login {
+    padding-right: 10px;
+    border-right: 1px solid #666;
+}
+.welcome .register {
+    padding-left: 10px;
+}
+.top-bar-nav .list {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+}
+.top-bar-nav ul li {
+    float: left;
+}
+.top-bar-nav ul li a {
+    padding: 0 15px;
+    border-right: 1px solid #666;
+}
+.top-bar-nav .list li:first-child a {
+    padding-left: 0;
+}
+.top-bar-nav .list li:last-child a {
+    padding-right: 0;
+    border: 0;
+}
+
+
+/* Header Start */
+.header {
+    height: 120px;
+    /*background-color: skyblue;*/
+}
+.header .container .logo img {
+    height: 120px;
+    width: 190px;
+    opacity: 0.5;
+}
+.header .search form{
+    margin-top: 42px;
+    font-size: 0;
+}
+.header .search form input {
+    width: 508px;
+    height: 34px;
+    border: 1px solid #dd302d;
+}
+.header .search form button {
+    width: 80px;
+    height: 36px;
+    background-color: #DD302D;
+    border: 1px solid #dd302d;
+    vertical-align: top;
+    background-image: url("../images/search_icon.png");
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: 28px 6px;
+}
+
+/* main navigation Start */
+.m-nav {
+    height: 48px;
+    border-bottom: 1px solid #DD302D;
+}
+.m-nav .all-tags {
+    height: 48px;
+    width: 190px;
+    background-color: #DD302D;
+    color: white;
+    text-align: center;
+    line-height: 48px;
+    font-size: 16px;
+}
+.m-nav .m-nav-list {
+    height: 48px;
+    text-align: center;
+    line-height:48px;
+    font-size: 16px;
+}
+.m-nav .m-nav-list a {
+    margin: auto 10px;
+}
+
