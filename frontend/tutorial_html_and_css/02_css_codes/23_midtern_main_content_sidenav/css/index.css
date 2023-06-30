@@ -198,6 +198,8 @@
     line-height: 26px;
 }
 
+
+
 .slide-other .slide-other-nav {
     margin-top: 10px;
     width: 290px;
@@ -205,33 +207,22 @@
     background-color: green;
     overflow: hidden;
 }
-.slide-other-nav:first-child {
+.other-nav-list:first-child{
     margin-top: 16px;
 }
-.slide-other-nav-list li {
+.other-nav-list:nth-child(2){
+    margin: 11px 0;
+}
+.slide-other-nav li {
     width: 48px;
     height: 70px;
     background-color: skyblue;
-    margin: 0 11px;
     float: left;
+    margin: 0 11px;
 }
-.slide-other-nav-list li:first-child {
+.slide-other-nav li:first-child{
     margin-left: 16px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
