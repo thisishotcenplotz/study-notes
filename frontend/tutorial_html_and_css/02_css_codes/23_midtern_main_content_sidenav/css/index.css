@@ -1,10 +1,8 @@
 /* Initialization Setup */
-
 .container {
     width: 1190px;
     margin: 0 auto;
 }
-
 /* Navigation Bar Start */
 .top-bar {
     height: 30px;
@@ -48,8 +46,6 @@
     padding-right: 0;
     border: 0;
 }
-
-
 /* Header Start */
 .header {
     height: 120px;
@@ -80,7 +76,6 @@
     background-repeat: no-repeat;
     background-position: 28px 6px;
 }
-
 /* main navigation Start */
 .m-nav {
     height: 48px;
@@ -104,7 +99,6 @@
 .m-nav .m-nav-list a {
     margin: auto 10px;
 }
-
 /* main content Start */
 .main-content {
     margin-top: 10px;
@@ -175,7 +169,6 @@
     width: 290px;
     height: 458px;
 }
-
 .slide-other .slide-other-message {
     width: 260px;
     height: 156px;
@@ -197,9 +190,6 @@
     height: 26px;
     line-height: 26px;
 }
-
-
-
 .slide-other .slide-other-nav {
     margin-top: 10px;
     width: 290px;
@@ -207,22 +197,20 @@
     background-color: green;
     overflow: hidden;
 }
-.other-nav-list:first-child{
-    margin-top: 16px;
-}
 .other-nav-list:nth-child(2){
-    margin: 11px 0;
+    margin: 17px auto;
 }
 .slide-other-nav li {
     width: 48px;
     height: 70px;
     background-color: skyblue;
     float: left;
-    margin: 0 11px;
+    margin: 10px 11px;
 }
-.slide-other-nav li:first-child{
-    margin-left: 16px;
+.other-nav-list:first-child{
+    margin-top: 16px;
 }
+
 
 
 
