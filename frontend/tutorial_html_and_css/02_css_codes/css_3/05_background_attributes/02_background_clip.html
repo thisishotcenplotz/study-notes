@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>background-clip</title>
+    <style>
+      .box1 {
+        width: 400px;
+        height: 400px;
+        background-color: skyblue;
+        margin: 0 auto;
+        font-size: 40px;
+        padding: 50px;
+        border: 50px dashed black;
+        color: transparent;
+        background-image: url('../../css_2/img.png');
+        /*background-size: 400px 400px;*/
+        background-size: cover;
+        background-repeat: no-repeat;
+        /*background-origin: content-box;*/
+        background-origin: border-box;
+        /*background-origin: padding-box;*/
+        /*  background-clip: content-box;*/
+        -webkit-background-clip: text;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">Hello World</div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>background-origin</title>
+    <style>
+      .box1 {
+        width: 400px;
+        height: 400px;
+        background-color: skyblue;
+        margin: 0 auto;
+        font-size: 40px;
+        padding: 50px;
+        border: 50px dashed black;
+        /*background-origin: content-box;*/
+        /*background-origin: border-box;*/
+        background-origin: padding-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">Hello World</div>
+  </body>
+</html>
