@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>径向渐变</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            float: left;
+            font-size: 20px;
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+        .box1 {
+            background-image: radial-gradient(red,yellow,green);
+        }
+        .box2 {
+            background-image: radial-gradient(at left top,red,yellow,green);
+        }
+        .box3 {
+            background-image: radial-gradient(at 100px 50px,red,yellow,green);
+        }
+        .box4 {
+            background-image: radial-gradient(circle,red,yellow,green);
+        }
+        .box5 {
+            background-image: radial-gradient(100px 100px,red,yellow,green);
+        }
+        .box6 {
+            background-image: radial-gradient(red 50px,yellow 100px,green 150px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1">默认情况</div>
+    <div class="box box2">通过关键词调整渐变圆的圆心</div>
+    <div class="box box3">通过像素值调整径向渐变圆的圆心</div>
+    <div class="box box4">通过关键词circle调整为正圆</div>
+    <div class="box box5">通过像素值调整为正圆</div>
+    <div class="box box6">通过像素值调整为正圆</div>
+</body>
+</html>
