@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>if语句</title>
+      <script>
+        if(true){
+          alert('Hahaha...');
+        }
+
+        // example
+
+        let a=10;
+        if(a>10){
+          alert('a is greater than 10');
+        }
+
+        let c = prompt('请输入c');
+        if (c > 100){
+          alert('c is greater than 100');
+        }
+        else {
+          alert('c is less than 100');
+        }
+
+
+      </script>
+  </head>
+  <body>
+      <div>
+        <p>流程控制语句可以用来改变程序执行的顺序</p>
+
+        <ol>
+          <li>条件判断语句</li>
+          <li>条件分支语句</li>
+          <li>循环语句</li>
+        </ol>
+      </div>
+
+
+      <div>
+        <h3>if语句</h3>
+        <ul>
+          <li>
+            <p>执行流程</p>
+            <ul>
+              <li>如果结果为true，则执行if语句</li>
+              <li>如果为false则不执行</li>
+            </ul>
+          </li>
+
+          <li>if语句值会控制紧随其后的那一行代码,如果希望可以控制多行代码，可以使用代码块将语句整合</li>
+
+          <li>最佳实践：即使if后只有1行代码，我们也应该编写代码块，这样结构会更加的清晰</li>
+
+          <li>如果if后的表达式不是布尔值，会转换为布尔值后进行计算</li>
+
+        </ul>
+
+      </div>
+  </body>
+</html>
