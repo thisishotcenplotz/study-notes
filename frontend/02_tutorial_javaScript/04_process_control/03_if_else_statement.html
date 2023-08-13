@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>if-else语句</title>
+      <script>
+          let age = prompt('请输入年龄');
+//           if (age >= 60){
+//             alert('You are retired!');
+//           }
+//           else {
+//             alert('You are in working age');
+//           }
+
+          if(age >= 100){
+            alert('你真是一个长寿的人')
+          }
+          else if (age >=80 && age < 100){
+            alert('你比楼上那位年轻不少')
+          }
+          else if (age >= 60 && age <80 ){
+            alert('你已经退休了')
+          }
+          else{
+            alert('没啥好说的')
+          }
+
+
+      </script>
+  </head>
+  <body>
+    <div>
+      <p>if-else</p>
+      <ul>
+        <li>执行流程：
+          <ul>
+            <li>if-else执行时，先对条件表达式进行求值判断</li>
+            <li>如果为true则执行if后的语句</li>
+            <li>如果为false，则执行else后的语句</li>
+          </ul>
+        </li>
+
+        <li>if-else if-else:
+          <ul>
+            <li>if-else if-else语句会自上向下依次对if后的语句的条件表达式进行求值判断</li>
+            <li>如果条件表达式结果为true，则执行当前if后的语句，执行完毕语句结束</li>
+            <li>如果条件表达式为false，则继续向下判断，知道找到true为止</li>
+            <li>如果所有的条件表达式都是false，则执行else后的语句</li>
+          </ul>
+        </li>
+
+        <li>注意：if-else if -else 语句中只会有一个代码块被执行，一旦有执行的代码块，下边的条件都不会继续判断了，所以要注意条件编写的顺序</li>
+      </ul>
+    </div>
+  </body>
+</html>

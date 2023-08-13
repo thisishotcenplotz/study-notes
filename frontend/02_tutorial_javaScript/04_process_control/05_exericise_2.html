@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>if-else练习2</title>
+
+      <script>
+        /*
+        * 练习2：
+        *  - 从键盘输入小明的期末成绩：
+        *  - 当成绩为100时，奖励一辆bmw
+        *  - 当成绩为80-90 时奖励一台iphone
+        *  - 当成绩为60-79时，奖励参考书一本
+        *  - 其他时，什么也不讲理
+        *
+        * */
+
+        let score = parseInt(prompt('请输入小明的成绩'));
+
+        if(!isNaN(score) && score <= 100 && score >= 0){
+          if(score === 100){
+            alert('奖励bmw一辆');
+          }
+          else if (score >= 80 && score <= 99){
+            alert('奖励iphone一台');
+          }
+          else if (score >= 60 && score <= 79){
+            alert('奖励参考书一本');
+          }
+          else {
+            alert('考这B样还想要奖励？？?');
+          }
+        }
+        else {
+          alert('输入格式有误，请重新输入小明的分数');
+        }
+
+
+
+      </script>
+  </head>
+  <body>
+
+  </body>
+</html>
