@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关系运算符</title>
+
+  <script>
+    let rst = 'a' < 'b';
+    console.log(rst); //返回true
+
+    let rst = 'abc' < 'b';
+    console.log(rst); // 返回true
+
+    let rst = '12' < '2';
+    console.log(rst); //返回true
+
+    let num = 6;
+    let rst = 5 < num < 10;
+    console.log(rst); // true.永远都是true；所以不能这么写
+
+    // 正确写法：
+    let rst = (num > 5) && (num < 10);
+    console.log(rst);
+
+  </script>
+</head>
+<body>
+  <div>
+    <p>关系运算符</p>
+    <ul>
+      <li>关系运算符来检查两个值之间的关系是否成立
+        <ul>
+          <li>成立：返回true</li>
+          <li>不成立：返回false</li>
+        </ul>
+      </li>
+
+
+      <li>
+        >
+        <ul>
+          <li>用来检查左值是否大于右值；大于返回true，反之亦然</li>
+        </ul>
+      </li>
+
+
+      <li> >= </li>
+      <li> == </li>
+      <li>
+        注意：
+        <ul>
+          <li>当对非数值进行关系运算时，它会先将钱转换为数值然后再比较</li>
+          <li>当关系运算符的两端是两个字符串，它不会将字符串转换为数值，而是逐位比较Unicode编码</li>
+          <li>利用这个特典可以对字符串按照字母排序</li>
+          <li>注意：比较两个字符串类型的数字时，一定要进行类型转换</li>
+        </ul>
+      </li>
+
+    </ul>
+
+  </div>
+</body>
+</html>

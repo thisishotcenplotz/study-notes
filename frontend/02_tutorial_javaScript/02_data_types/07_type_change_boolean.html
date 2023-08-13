@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>类型转换---布尔值</title>
+    <script>
+      let a = 1;
+      console.log(typeof Boolean(a), Boolean(a));
+
+      let b = -1; //true
+      let c = 0; //false
+      let d = NaN; //false
+      let e = Infinity; // true
+    </script>
+  </head>
+  <body>
+    <div>
+      <ol>
+        <li>使用Boolean()函数将其他类型转换为布尔值
+          <ul>
+            <li>转换情况
+              <ul>
+                <li>数字:除了0和Nan是false,其他都是true</li>
+                <li>字符串：空字符串为false；其他都是true</li>
+                <li>null & undefined: 都是false</li>
+                <li>Object: 通常都会为true；</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          总结：
+          <ul>
+            <li>所有表示空性的没有的错误的值都是为false：0、null、空串、undefined</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

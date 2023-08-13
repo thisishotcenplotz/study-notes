@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>运算符</title>
+    <script>
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <p>运算符：</p>
+      <ol>
+        <li>可以对一个或多个值（操作数）进行运算</li>
+
+        <li>算数运算符：
+          <ul>
+            <li>实则运算符</li>
+            <li>**:幂运算</li>
+            <li>%:取模</li>
+            <li>JS是一门弱类型语言，可以通过自动类型转换来完成运算；如：10- '5'</li>
+          </ul>
+        </li>
+
+        <li>注意：
+          <ul>
+            <li>算数运算时，除了字符串的加法
+              <ul>
+                <li>其他运算的操作数是非数值时，都会转换为数值然后运算</li>
+                <li>当任意值为字符串时，它会将另一个非字符串转为字符串，然后进行字符串拼接。结果为字符串</li>
+                <li>可以利用这个特典进行字符串拼接。此处发生了隐式类型转换</li>
+                <li>可以利用任意类型+''的方式，来完成隐式转换，此方法相对String()方法更为简洁</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

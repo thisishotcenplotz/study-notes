@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS编写位置</title>
+<!--
+  1. 可以将js编写到网页内务的script标签中
+  2. 可以将js编写在外部的js文件中。然后通过script标签进行引入
+     - 一旦引入外部js文件，就不要在该标签内些js代码了。
+  3. 可以将js代码编写到指定的属性中
+-->
+  <script type="text/javascript">
+    alert("Hello! How are you")
+  </script>
+  <script src="script/script.js"></script>
+</head>
+<body>
+  <button onclick="alert('Why you click me ?')">Click Me</button>
+  <hr>
+  <a href="javascript:alert('Super Link');">Super Link</a>
+  <hr>
+  <a href="javascript:">Do Nothing</a>
+</body>
+</html>

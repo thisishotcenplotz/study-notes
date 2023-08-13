@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>相等运算符</title>
+      <script>
+        let rst = null == undefined;
+        console.log(rst); //返回true
+
+        let rst = NaN == NaN;
+        console.log(rst); //返回false
+
+      </script>
+  </head>
+  <body>
+    <div>
+      <ol>
+        <li>==
+          <ol>
+            <li>相等返回true，反之亦然
+              <ul>
+                <li>使用相等运算符进行比较时，会先把两边转换为同一类型再比较，通常转为数值类型</li>
+                <li>类型转换后，值相同也会返回true</li>
+                <li>null和undefined进行比较时会转回true</li>
+                <li>NaN不和任何值进行比较，包括它自己</li>
+              </ul>
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          ===全等运算符，用来比较两个值是否全等
+          <ul>
+            <li>全等运算符，不会进行类型转换</li>
+            <li>当类型不同时，直接返回true</li>
+          </ul>
+
+        </li>
+
+      </ol>
+
+    </div>
+  </body>
+</html>

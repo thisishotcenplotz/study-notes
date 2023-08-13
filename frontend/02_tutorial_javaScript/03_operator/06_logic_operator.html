@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>逻辑运算符</title>
+    <script>
+        /*
+        * &&
+        *   - 可以对两个值进行与运算
+        *   - 当&& 左右都为true时，则返回true，否则返回false
+        *   - 与运算就是找false，找到false直接返回，没有false才会返回true
+        *   - 对于非布尔值进行与运算，它会转换为布尔值然后进行运算，但是最后会返回原值
+        *       - 如果第一个值为false，则直接返回第一个值
+        *       - 如果第一个值为true，则返回第二个值
+        *
+        * ||
+        *   - 可以对两个值进行或运算
+        *   - 当 || 两边有true时，则返回true，否则返回false
+        *   - 或运算也是短路或，如果第一个值为true，则不会看第二个
+        *   - 或运算是找true，如果找到ture则直接返回，没有true才会返回false
+        *   - 非布尔值情况或运算，它会转换为布尔值然后进行运算。但是最终返回原值
+        *     - 如果第一个为true，则返回第一个
+        *     - 如果第一个值为false，则返回第二个
+        *
+        */
+
+        let rst = true && true;
+        console.log(rst); //true
+
+        let rst = true && false;
+        console.log(rst); // false
+
+        let rst = false && false;
+        console.log(rst); //false
+
+        true && alert('TRUE');
+
+        false && alert("FALSE");
+
+        let rst = 1 && 2;
+        console.log(rst); // 返回2
+
+        let rst = 1 && 0;
+        console.log(rst); // 返回0
+
+        let rst = 0 && NaN;
+        console.log(rst); //返回 0
+
+        // ----------------------------
+
+        let rst = true || false;
+        console.log(rst); //true
+
+        let rst = false || false;
+        console.log(false); // false
+
+        false || alert('会执行');
+
+        true || alert('不会执行');
+
+
+        let rst = 1 || 2;
+        console.log(rst); //返回1
+
+        let rst = 'Hello' || NaN;
+        console.log(rst);// 返回Hello
+
+        let rst = NaN || 1;
+        console.log(rst); // 返回1
+    </script>
+  </head>
+  <body>
+    <div>
+      <p>逻辑运算符</p>
+      <ul>
+        <li>!</li>
+        <li>&&</li>
+        <li>||</li>
+      </ul>
+    </div>
+  </body>
+</html>

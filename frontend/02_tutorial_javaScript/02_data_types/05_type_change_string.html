@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>类型转换---字符串</title>
+    <script>
+      let a = 10;
+      console.log(typeof a, ':',a);
+
+      console.log(a.toString(),typeof a.toString())
+
+      let b = String(a);
+      console.log(b);
+
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <h3>类型转换是将一种数据类型转换为其他类型</h3>
+      <p>主要是指将类型转换为字符串、数值和布尔值</p>
+
+      <br>
+
+      <p>转化为字符串</p>
+      <ol>
+        <li>调用toString()方法将其他类型转换为字符串</li>
+        <li>由于null和undefined中没有toString()方法，所以会报错
+          <ul>
+            <li>此时应该调用String()方法</li>
+            <li>对于null，则直接转换成"null"</li>
+            <li>对于undefined，直接转换成"undefined"</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

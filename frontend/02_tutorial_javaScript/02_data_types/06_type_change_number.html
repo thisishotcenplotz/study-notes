@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类型转换-数值</title>
+  <script>
+    let a = '123';
+    console.log(typeof a,a);
+    console.log(typeof Number(a), Number(a));
+
+    let b = '123px';
+    console.log(parseInt(b),typeof parseInt(b));
+
+  </script>
+</head>
+<body>
+  <div>
+    <p>将其他类型的数据转换为数值</p>
+    <ol>
+      <li>使用Number()函数来将其他类型转换为数值
+        <ul>
+          <li>数字字符串：如果字符串是一个合法的数字，则会转换为对应的数字</li>
+          <li>字母字符串：不合法数字将会转为NaN</li>
+          <li>空字符串：会转换为0</li>
+          <li>空格字符串：会转换为0</li>
+          <li>布尔值：true--->1；false--->0;</li>
+          <li>null: 转换为0</li>
+          <li>undefined：NaN</li>
+        </ul>
+      </li>
+      <li>
+        专门用来将字符串转换为数值的两个方法
+        <ul>
+          <li>parseInt():从头开始取有效数字，如果开头不是数字则无法转换
+            <ul>
+              <li>可以临时使用parseInt()来进行取整，但不是最优解。</li>
+            </ul>
+          </li>
+          <li>parseFloat()：从头开始取有效小数，如果开头不是数字则无法转换</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
