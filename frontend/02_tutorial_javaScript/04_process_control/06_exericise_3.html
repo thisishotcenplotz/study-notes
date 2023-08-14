@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>if 练习 3</title>
+      <script>
+        /*
+        *  练习3：
+        *  大家都知道，男大当婚，女大当嫁。那么女方家长要嫁女儿，当然提出一定的条件:
+        *  高180cm以上；富：1000万以上；帅：500以上；
+        *  如果三个条件同时满足，则：'一定要嫁'
+        *  如果三个条件有为真的情况，则：'嫁吧，比上不足比下有余'
+        *  如果三个条件都不满足，不嫁。
+        */
+
+        let height = parseInt(prompt('请输入您的身高（cm）：'));
+        let wealth = parseInt(prompt('请输入您的存款金额（万元）:'));
+        let handsome = parseInt(prompt('请输入长相分数:'));
+
+        let rst;
+        if (height >180 && wealth >1000 && handsome >500){
+          rst = '一定要嫁！';
+        }
+        else if (height > 180 || wealth > 1000 || handsome > 500){
+          rst = '嫁吧，比上不足比下有余';
+        }
+        else {
+          rst = '不嫁';
+        }
+
+        alert(rst);
+
+
+      </script>
+  </head>
+  <body>
+
+  </body>
+</html>
