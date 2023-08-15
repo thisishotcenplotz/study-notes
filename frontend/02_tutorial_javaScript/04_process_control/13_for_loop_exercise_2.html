@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for循环练习2</title>
+    <script>
+      /*
+     * 求1000以内的水仙花
+     * 一个n位数（n>=3）,如果它各个位数的n次幂之和等于这个数，那么它就是水仙花数字；
+     * 153 ---> 1   5   3 ---> 1 + 125 + 27 = 153
+     */
+
+      for(let i=100;i<1000;i++){
+        let hundred =parseInt(i/100);
+        let tens = parseInt((i - hundred*100)/10);
+        let singles = i%10;
+        if( hundred**3 + tens**3 + singles**3 === i){
+          console.log(i)
+        }
+      }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
