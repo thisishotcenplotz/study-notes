@@ -14,6 +14,20 @@
           console.log(`haha:${cnt}`);
           cnt++;
         }
+        /*
+        * 练习：
+        * 假设银行年利率为5%，问1000元到5000元需要多久？
+        *
+        */
+
+        let base_amount = 1000;
+        let interest_ratio = 0.05
+
+        while(base_amount<= 5000){
+          base_amount = base_amount * (1+interest_ratio)
+        }
+
+        alert(base_amount);
 
       </script>
   </head>
