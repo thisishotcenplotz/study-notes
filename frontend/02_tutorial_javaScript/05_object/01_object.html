@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>对象</title>
+      <script>
+        //创建对象
+        let obj = new Object();
+        obj.name = '孙悟空';
+        obj.age = 18;
+        obj.gender = 'M';
+
+        console.log(obj);
+
+        //读取对象中的属性
+        console.log(obj.name);
+
+        // 修改属性
+        obj.name = 'Tom Sun';
+
+        // 删除属性
+        delete obj.name;
+
+
+      </script>
+  </head>
+  <body>
+    <div>
+      <p>数据类型：</p>
+      <ul>
+        <li>
+          原始值
+          <ol>
+            <li>数值 Number</li>
+            <li>大整数 BigInt</li>
+            <li>字符串 String</li>
+            <li>布尔值 Boolean</li>
+            <li>空值 Null</li>
+            <li>未定义 Undefined</li>
+            <li>符号 Symbol</li>
+          </ol>
+        </li>
+
+        <li>对象
+          <ul>
+            <li>对象是JS中的一种符合数据类型</li>
+            <li>它就相当于一个容器，在对象中可以存储各种不同类型的数据</li>
+            <li>对象中存储的数据，我们称为属性</li>
+          </ul>
+        </li>
+      </ul>
+
+      <br>
+      <p>原始值只能用来表示一些简单的数据，不能表示复杂数据</p>
+      <p>比如：现在需要再程序中表示一个人的信息</p>
+      <p>如果读取的事一个对象中没有的属性，JS不会报错会返回一个undefined</p>
+    </div>
+
+  </body>
+</html>

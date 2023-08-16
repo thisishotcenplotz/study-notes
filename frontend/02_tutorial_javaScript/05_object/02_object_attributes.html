@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>对象的属性</title>
+      <script>
+        let obj = Object();
+        obj.name = '孙悟空';
+        obj.if = 'Haha'; // 不建议
+        obj.let = 'Oops...'; // 不建议
+        obj['123123@#$#R%@'] = 'OMG'; // 不建议
+
+        // 也可以使用符号作为属性名
+        let mySymbol = Symbol();
+        obj[mySymbol] = '通过symbol添加的属性';
+
+
+        console.log(obj)
+
+
+      </script>
+  </head>
+  <body>
+    <div>
+      <p>属性名</p>
+      <ul>
+        <li>通常属性名就是一个字符串，所以属性名可以使任何值，没有什么特殊要求</li>
+        <li>但是，如果属性名太特殊了，不能直接使用，需要使用[]来设置</li>
+        <li>虽然如此，但是我们还是强烈建议属性名也难找标识符规范命名</li>
+        <li>也可以使用符号( Symbol() )作为属性名</li>
+      </ul>
+    </div>
+
+  </body>
+</html>
