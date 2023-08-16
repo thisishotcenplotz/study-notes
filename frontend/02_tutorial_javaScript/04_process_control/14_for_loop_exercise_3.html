@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for-loop-exercise-3</title>
+  <script>
+    /*
+    * 用户任意输入大于2整数，验证是否为质数
+    */
+
+    let num = +prompt('输入任意大于1的整数');
+    is_prime = false;
+    for(let i = 2; i < num; i++){
+      if(num % i === 0){
+        alert('this is prime number');
+        is_prime = true;
+        break;
+      }
+    }
+    if(!is_prime){
+      alert(`${num} is not prime number`)
+
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
