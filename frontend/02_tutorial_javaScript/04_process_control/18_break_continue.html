@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>BREAK & CONTINUE</title>
+
+      <script>
+        //break终止离它最近的循环
+        for(let i = 0; i < 5; i++){
+          if(i===3){
+            break;
+          }
+          console.log(i);
+        }
+
+
+        let loop_size = 5;
+
+        for(let i=0;i<loop_size;i++){
+          for(let j = 0; j < loop_size; j++){
+            if (i === 1){
+              // break;
+              continue;
+            }
+          }
+        }
+
+        // continue 用来跳过当次循环
+
+
+      </script>
+
+
+  </head>
+  <body>
+    <div>
+      <p>break & continue</p>
+      <ul>
+        <li>break
+          <ul>
+            <li>break用来终止switch和循环语句</li>
+            <li>break执行后，当前的switch或循环会立刻停止</li>
+            <li>break会终止离他最近的循环</li>
+          </ul>
+        </li>
+
+
+
+        <li>continue
+          <ul>
+            <li>continue用来跳过当次循环</li>
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
