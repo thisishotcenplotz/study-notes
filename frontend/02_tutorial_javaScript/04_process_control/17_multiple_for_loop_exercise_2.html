@@ -8,13 +8,13 @@
     <title>质数练习</title>
    <script>
      for(let i = 2; i < 100; i++){
-       let is_prime = true;
+       let is_prime = false;
        for(let j = 2; i < j; j++){
          if(i % j === 0){
-           is_prime = false;
+           is_prime = true;
          }
          if(is_prime){
-           console.log(`${i} is primary number`);
+           document.write(`${i} is primary number`);
          }
        }
      }

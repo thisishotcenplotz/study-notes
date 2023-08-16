@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>快速找质数</title>
+    <script>
+
+      //开始一个计时器
+      console.time('Time Consumption');
+
+      for(let i=2; i<10000000; i += 2){
+        let flag = true;
+
+        for(let j = 2; j <= Math.sqrt(i); j++){
+          if(i % j === 0){
+            flag = false;
+            break;
+          }
+        }
+
+        if(flag){
+          // console.log(`${i} is prime`);
+        }
+
+      }
+
+      //停止计时器
+      console.timeEnd('Time Consumption');
+    </script>
+</head>
+<body>
+
+</body>
+</html>
