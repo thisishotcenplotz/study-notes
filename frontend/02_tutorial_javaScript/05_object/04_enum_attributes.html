@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>枚举</title>
+    <script>
+      let obj = {
+        'name':'孙悟空',
+        'age':18,
+        'gender':'男',
+        'address':'花果山'
+      }
+
+      for(let propName in obj){
+        console.log(obj[propName]);
+      }
+
+      for(let p in obj){
+        console.log(p.toString() + ':' +obj[p]);
+      }
+    </script>
+</head>
+<body>
+  <div>
+    <p>枚举属性，指将对象中的所有的属性全部获取</p>
+    <p>注意：并不是所有的属性都可以枚举，比如：使用符号（Symbol）添加的属性</p>
+  </div>
+</body>
+</html>
