@@ -16,6 +16,12 @@
       let obj = Object();
       obj.name = '孙悟空';
 
+      // ------------------
+      let obj2 = Object();
+      let obj3 = Object();
+
+      console.log(obj2 === obj3); //是false；因为它们比的是内存地址
+
     </script>
 </head>
 <body>
@@ -28,7 +34,10 @@
 
   <p>对象</p>
   <ul>
-    <li></li>
+    <li>对象属于可变类型</li>
+    <li>当对两个对象进行比较时，它们比较的是内存地址</li>
+    <li>对象创建完成后，可以任意添加删除对象中的属性</li>
+    <li>注意：如果有两个变量同时指向一个对象，通过一个变量修改对象时，对另外一个变量也会产生影响</li>
   </ul>
 </body>
 </html>
