@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数的创建方式</title>
+    <script>
+      //函数声明
+      function f1(){
+        console.log('this is f1');
+      }
+
+      //函数表达式
+      const fn2 = function(){
+        console.log('this if f2');
+      }
+
+      // 箭头函数
+      const fn3 = ()=>{
+        console.log('this is f3')
+      }
+    </script>
+</head>
+<body>
+  <div>
+    <p>函数的创建方式：</p>
+    <ol>
+      <li>函数的声明
+        <ul>
+          <li>function 函数名([参数]){}</li>
+        </ul>
+      </li>
+
+      <li>
+        函数的表达式
+        <ul>
+          <li>const 变量=function(){}</li>
+        </ul>
+      </li>
+
+      <li>箭头函数
+        <ul>
+          <li>() => {}</li>
+          <li>() => </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
