@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习题</title>
+
+    <script>
+      //Q1:
+      //问：打印什么？
+      var a = 1;
+      function fn(){
+        a = 2;
+        console.log(a);
+      }
+
+      fn();
+      console.log(a);
+      // 2 --> 2; 因为function里定义的全局变量;
+
+
+      //变量和函数的提升同样适用于函数作用域
+      //Q2:
+      //问：打印什么？
+      //定义形参就相当于在函数中声明了对应的变量，但是没有赋值。
+      var a = 1;
+      function fn(){
+        console.log(a); //undefined
+        var a = 2;
+        console.log(a); //2
+      }
+
+      fn();
+      console.log(a); //1
+      // undefined --> 2 --> 1;
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

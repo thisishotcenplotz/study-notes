@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>箭头函数的返回值</title>
+    <script>
+      const twoSum = (a,b,) =>{
+        return a + b;
+      }
+
+      let rst = twoSum(1,2);
+      console.log(rst);
+
+      const twoSum2 = (a,b) => a+b;
+      let rst2 = twoSum2(1,2);
+      console.log(rst2);
+
+      const fn = () => {
+        return {
+          'name':'孙悟空'
+        }
+      }
+
+      const fn2 = () => ({'name':'孙悟空'})
+      console.log(fn2());
+
+    </script>
+</head>
+<body>
+  <div>
+    <p>箭头函数的返回值可以直接写在箭头后面</p>
+    <ul>
+      <li>如果直接在箭头后设置对象字面量为返回值时，对象字面量必须使用（）括起来</li>
+    </ul>
+  </div>
+</body>
+</html>

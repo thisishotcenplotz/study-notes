@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>箭头函数中的this</title>
+
+    <script>
+      function fn(){
+        console.log('fn--->',this)
+      }
+
+      const fn2 = ()=>{
+        console.log('fn2--->',this) //永远是window
+      }
+
+      fn();
+      fn2();
+
+      const obj = {
+        'name':'孙悟空',
+        fn,
+        fn2,
+        sayHello(){console.log(this.name)},
+        test(){
+          console.log(this.name);
+
+          function t1(){
+            console.log('t1--->',this);
+          }
+          t1();
+
+          const t2 = ()=>{
+            console.log('t2--->',this);
+          }
+
+          t2();
+        }
+
+      }
+      obj.fn(); // obj
+      obj.fn2(); // window
+    </script>
+</head>
+<body>
+  <p>箭头函数没有自己的this，它的this由外层作用域决定</p>
+  <p>箭头函数的this和它的调用方式无关</p>
+</body>
+</html>

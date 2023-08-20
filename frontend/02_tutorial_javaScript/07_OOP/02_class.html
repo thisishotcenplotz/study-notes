@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类</title>
+    <script>
+      const Person = class {
+
+      }
+      class Beauty{
+
+      }
+
+      const zhangSan = new Person();
+      const liSi = new Person();
+      const diLiReBa = new Beauty();
+      console.log(diLiReBa);
+      console.log(zhangSan instanceof Person);
+    </script>
+</head>
+<body>
+  <div>
+    <p>使用Object创建对象的问题：</p>
+    <ul>
+      <li>无法区分出不同类型的对象</li>
+      <li>不方便批量创建对象</li>
+    </ul>
+
+    <br>
+
+    <p>在JS中可以通过类（class）来解决问题：</p>
+    <ul>
+      <li>类是对象的模板,可以将对象中的属性或方法直接定义在类中</li>
+      <li>定义后可以直接通过类来创建对象，无需重复创建</li>
+      <li>创建类名使用大驼峰命名法</li>
+      <li>通过同一个类创建的对象，我们称为同类对象</li>
+      <li>可是使用instanceOf来检查一个对象是否由某个类创建的</li>
+    </ul>
+  </div>
+</body>
+</html>

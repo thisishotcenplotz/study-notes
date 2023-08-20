@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>立即执行函数</title>
+
+    <script>
+      {
+        let a = 10;
+      }
+
+      {
+        let a = 10;
+      }
+
+
+
+      //可以通过这种方式创建作用域，但不完美
+      const fn = ()=>{
+        var a = 10;
+      }
+      fn();
+      const fn2 = ()=>{
+        var a = 20;
+      }
+      fn2();
+
+
+      //希望可以创建一个只执行一次的匿名函数
+      // IIFE(立即执行函数)
+      ((()=>{let a = 10;console.log(a)})());
+
+      ((()=>{let a = 20;console.log(a)})());
+
+
+    </script>
+</head>
+<body>
+  <div>
+    <p>在开发中应该尽量减少直接在全局作用域中编写代码</p>
+    <p>所以我们的代码要尽量编写在局部作用域中</p>
+    <p>如果使用let声明的变量，可以使用{}来创建块作用域</p>
+
+    <br>
+
+
+
+  </div>
+
+
+  <div>
+    <p>立即执行函数（IIFE）</p>
+    <ul>
+      <li>立即是一个匿名函数，并它只会调用一次</li>
+      <li>可以利用IIFE来创建一个一次性的函数作用域，避免变量冲突问题</li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提升</title>
+
+    <script>
+      var a = 10;
+      console.log(a);
+
+      b = 10;
+      console.log(b); //windows.b;
+
+      console.log(c);
+      // c = 30; //会报错;
+      var c = 10; // c会打印undefined
+
+      fn();
+      function fn(){
+          alert('我是fn的alert');
+      }
+      fn();
+    </script>
+</head>
+<body>
+  <div>
+    <p>变量的提升</p>
+    <ul>
+      <li>使用var声明的变量，它会在所有代码执行前被声明</li>
+      <li>所以我们可以在变量声明前就访问</li>
+      <li>实际使用中没啥意义</li>
+    </ul>
+  </div>
+
+    <div>
+        <p>函数的提升</p>
+        <ul>
+            <li>使用函数声明创建的函数，会在其他代码执行前被创建</li>
+            <li>所以我们可以在函数声明前被调用函数</li>
+        </ul>
+    </div>
+
+    <div>
+        <p>let声明的变量实际也会提升，但是在赋值之前解释器禁止对该变量的访问</p>
+    </div>
+</body>
+</html>

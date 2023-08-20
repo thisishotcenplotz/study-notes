@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>作用域</title>
+      <script>
+        let a = 'variable-a';
+
+      </script>
+  </head>
+  <body>
+    <div>
+      <p>作用域（scope）</p>
+      <ul>
+        <li>作用域指的是一个变量的可见区域</li>
+
+        <li>作用域有两种：
+          <ul>
+            <li>全局作用域
+              <ul>
+                <li>全局作用域在网页运行时创建，在网页关闭时销毁</li>
+                <li>左右直接编写到script标签中的代码都位于全局作用域中</li>
+                <li>全局作用域中的的变量时全局变量，可以在任意位置中访问</li>
+              </ul>
+            </li>
+            <li>局部作用域
+              <ul>
+                <li>块作用域</li>
+                <li>块作用域时一种局部作用域</li>
+                <li>块作用域在代码块执行时创建，代码块执行完毕它就销毁</li>
+                <li>在块作用域中晟敏的变量时局部变量，只能在块内部访问，外部无法访问</li>
+              </ul>
+
+            </li>
+          </ul>
+        </li>
+
+
+      </ul>
+    </div>
+  </body>
+</html>

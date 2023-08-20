@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象编程</title>
+    <script>
+      const beauty = {
+        'height': 170,
+        'name':'迪丽热巴',
+        'age':18,
+        'weight':50,
+        'pleasure':100,
+        sleep(){console.log(this.name,'is sleeping');this.pleasure++;},
+        eat(){console.log(this.name,'is eating');this.weight++;},
+        workOut(){console.log(this.name,'is working out');this.weight--;}
+
+      }
+
+      console.log(beauty)
+
+
+    </script>
+</head>
+<body>
+  <div>
+    <p>面向对象编程（OOP）</p>
+
+    <ul>
+      <li>程序是干嘛的？
+        <ul>
+          <li>程序就是对我们现实世界的一个抽象</li>
+        </ul>
+
+      </li>
+
+      <li>对象是干嘛的？
+        <ul>
+          <li>一个事物抽象到程序中后，就变成了对象(Object)</li>
+          <li>在程序的世界中，一切皆对象</li>
+        </ul>
+      </li>
+
+      <li>对象的组成
+        <ul>
+          <li>一个事物通常由两部分组成：数据（身高体重）,功能（裤衩穿外边还能飞）</li>
+          <li>一个对象由两部分组成，属性和方法</li>
+          <li>事物的数据到了对象中，体现为属性</li>
+          <li>事务的功能到了对象中，体现为方法</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

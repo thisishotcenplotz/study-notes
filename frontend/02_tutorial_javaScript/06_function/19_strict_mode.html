@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>严格模式</title>
+    <script>
+      "use strict" //全局严格模式
+      let a = 10;
+      console.log(a);
+
+      function fn(){
+        'use strict' //函数严格模式
+      }
+
+    </script>
+</head>
+<body>
+  <div>
+    <p>JS运行代码的模式由两种</p>
+    <ul>
+      <li>正常模式
+        <ul>
+          <li>默认情况下代码都运行在正常模式中</li>
+          <li>在正常模式，语法检查并不严格</li>
+          <li>它的原则是：能不报错尽量不报错</li>
+          <li>这种处理方式导致代码的运行性能较差</li>
+        </ul>
+      </li>
+
+      <li>严格模式
+        <ul>
+          <li>在严格模式下，语法检查变得严格</li>
+          <li>禁止使用一些语法</li>
+          <li>更容易报错</li>
+          <li>提升了性能</li>
+        </ul>
+      </li>
+    </ul>
+
+    <br>
+    <p>在开发中，尽量使用严格模式，这样可以将一些问题消灭在萌芽阶段，同时提升代码运行的性能</p>
+  </div>
+
+</body>
+</html>
