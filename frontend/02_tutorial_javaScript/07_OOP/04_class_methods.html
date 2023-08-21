@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类方法</title>
+    <script>
+        class Person{
+            name = '孙悟空';
+
+            sayHello(){
+                console.log(`${this.name} say Hello!`);
+            };//实例方法,且可以使用this
+
+            static test = ()=>{
+                console.log(`this is static method}`);
+            }//静态方法（类方法）;需要通过类来调用；静态方法中，this指向的是当前的类（Person）
+
+        }
+
+        swk = new Person();
+        console.log(swk);
+        Person.test();
+    </script>
+</head>
+<body>
+    <div>
+        <p></p>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>
