@@ -7,7 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>构造函数</title>
     <script>
+      class Person{
+        constructor(name,age,gender,pleasure=100) {
+          this.name = name;
+          this.age = age;
+          this.gender = gender;
+          this.pleasure = pleasure;
+        };
+        sayHello(){
+          console.log(`Hello! This is ${this.name}`);
+        }
+      }
 
+      swk = new Person('孙悟空',18,'Male');
+      zbj = new Person('猪八戒',28,'Male');
+      shs = new Person('沙和尚',38,'Male');
+      ts = new Person('唐僧大官人',48,'Male');
 
     </script>
 </head>
