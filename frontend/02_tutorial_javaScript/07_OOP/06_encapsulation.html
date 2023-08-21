@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>封装</title>
+    <script>
+      class Person{
+        #address;//实例使用#开头，就是私有属性，私有属性只能在类内部访问
+        constructor(name,age,gender) {
+          this.name = name;
+          this.age = age;
+          this.gender = gender;
+        }
+        sayHello(){
+          console.log(`this is ${this.name};I'm living in ${this.#address}`);
+        }
+        setAddress(address){
+          this.#address = address;
+        }
+        getAddress(){
+          console.log(this.#address);
+        }
+      }
+
+      const p1 = new Person('孙悟空',18,'Male');
+      p1.sayHello();
+
+
+    </script>
+</head>
+<body>
+  <div>
+    <p>面向对象三大特点</p>
+    <ul>
+      <li>封装
+        <ul>
+          <li>对象就是一个用来存储不同属性的容器</li>
+          <li>对象不仅负责属性，还要负责数据的安全</li>
+          <li>直接添加到对象中的属性，并不安全，因为它们可以被任意修改</li>
+          <li>如何确保数据的安全：
+            <ol>
+              <li>私有化数据
+                <ul>
+                  <li>将需要保护的数据设置为私有，只能在类内部访问</li>
+                </ul>
+              </li>
+              <li>提供getter与setter方法</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+      <li>多态</li>
+      <li>继承</li>
+    </ul>
+  </div>
+</body>
+</html>
