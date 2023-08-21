@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+
+      // this.sayHello = function(){
+      //   console.log(this.name + ' Hi');
+      // }
+
+    }
+    //向原型中添加方法
+    Person.prototype.sayHello = function(){console.log(this.name)};
+
+    // 静态属性
+    Person.staticPerperty = 'XXX';
+    Person.staticMethod = function(){};
+
+    const p = new Person('孙悟空',18);
+
+    console.log(p);
+  </script>
+</head>
+<body>
+  <p>早起的JS中，直接通过函数来定义类</p>
+  <ul>
+    <li>一个函数如果直接调用XXX（）那么这个函数就是一个普通函数</li>
+    <li>一个函数如果通过new来调用那么这个函数就是一个构造函数</li>
+  </ul>
+</body>
+</html>
