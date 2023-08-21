@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象的内存结构</title>
+    <script>
+      class Person{
+        constructor(name,age) {
+          this.name = name;
+          this.age = age;
+        }
+        sayHello(){
+          console.log('Hello',this.name);
+        }
+
+        myAge(){
+          console.log(`I'm ${this.age} years old`);
+        }
+        sayGoodBye = ()=>{
+          console.log(`${this.name} say good bye`);
+        }
+      }
+
+      const p = new Person('孙悟空',18);
+
+      p.sayHello();
+
+
+    </script>
+</head>
+<body>
+  <div>
+    <p>对象的内存结构</p>
+    <p>对象中存储属性的区域实际有两个：</p>
+    <ul>
+      <li>对象自身
+        <ul>
+          <li>比如直接哦通过对象所添加的属性，位于对象自身中</li>
+          <li>在类中通过 x = y 的形式添加的属性，也位于对象自身中</li>
+        </ul>
+      </li>
+
+      <li>原型对象（prototype）
+        <ul>
+          <li>对象中还有一些内容，会存储到其他的对象里（原型对象）</li>
+          <li>在对象中会有一个属性用来存储原型对象，这个属性叫__proto__</li>
+          <li>原型对象也负责为对象存储属性</li>
+          <li>当我们访问对象中的属性时，会优先访问对象自身的属性</li>
+          <li>对象自身不包含该属性时，才会去原型对象中寻找</li>
+          <li>会添加到原型对象中的情况：
+            <ul>
+              <li>在类中通过XXX（）{}方式添加的方法，位于原型中</li>
+              <li>主动向原型中添加的属性或方法</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+</body>
+</html>

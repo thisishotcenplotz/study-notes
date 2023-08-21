@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多态</title>
+    <script>
+      class Person{
+        constructor(name) {
+          this.name = name;
+        }
+      }
+
+      class Dog{
+        constructor(name) {
+          this.name = name;
+        }
+      }
+
+      const d = new Dog('旺财');
+      const p = new Person('张三');
+      // 定义一个函数，这个函数将接受对象作为一个参数，他可以输出hello并打印对象的那么属性
+
+      const sayHello = (obj)=>{
+        console.log('Hello' + obj.name);
+      }
+    </script>
+</head>
+<body>
+  <div>
+    <p>面向对象三大特点</p>
+    <ul>
+      <li>封装
+        <ul>
+          <li>对象就是一个用来存储不同属性的容器</li>
+          <li>对象不仅负责属性，还要负责数据的安全</li>
+          <li>直接添加到对象中的属性，并不安全，因为它们可以被任意修改</li>
+          <li>如何确保数据的安全：
+            <ol>
+              <li>私有化数据
+                <ul>
+                  <li>将需要保护的数据设置为私有，只能在类内部访问</li>
+                </ul>
+              </li>
+              <li>提供getter与setter方法</li>
+            </ol>
+          </li>
+        </ul>
+      </li>
+
+
+      <li>多态
+        <ul>
+          <li>在JS中不会检查参数的类型，所以这就意味着任何数据都可以作为参数传递</li>
+          <li>要调用某个函数， 无需指定的类型，只要对象满足某些条件即可</li>
+          <li>如果一个东西走路像鸭子，叫起来像鸭子，那么它就是鸭子</li>
+          <li>多态为我们提供了灵活性</li>
+        </ul>
+      </li>
+      <li>继承</li>
+    </ul>
+  </div>
+</body>
+</html>

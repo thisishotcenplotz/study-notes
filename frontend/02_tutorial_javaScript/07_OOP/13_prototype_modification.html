@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改原型</title>
+    <script>
+      class Animal{
+        constructor(name,age) {
+          this.name = name;
+          this.age = age;
+        }
+        sayHello(){
+          console.log('Hello',this.name);
+        }
+      }
+
+      class Dog extends Animal{
+        constructor(name,age,dType) {
+          super(name,age);
+          this.dType = dType;
+        }
+        makeNoise(){
+          console.log('woof~');
+        }
+      }
+
+      class bigDog extends Dog{
+        constructor(name,age,dType,height) {
+          super(name,age,dType,height);
+          this.height = height;
+        }
+
+        doGuardian(){
+          console.log(this.name+'is taking care your yards security');
+        }
+      }
+
+      const a = new Animal('animal',18);
+
+      //通过对象修改原型，像原型中添加方法，修改后所有同类实例都能访问该方法
+      a.__proto__.run = function(){
+        console.log(this.name + ' is running');
+      }
+
+      const b = new Dog('a',19,'crazy');
+      b.run();
+
+      console.log(Person.prototype);
+      b.prototype.fly = ()=>{
+          console.log('Im flying');
+      }
+      b.fly();
+
+
+
+    </script>
+</head>
+<body>
+  <div>
+    <p>大部分情况下，我们不需要修改原型对象</p>
+    <p>注意：千万不要通过类的实例去修改原型</p>
+    <p>通过一个对象影响所有同类对象，不合适</p>
+    <p>修改原型先得创建实例，麻烦</p>
+    <p>危险！</p>
+    <p>修改原型时，最好通过类来修改</p>
+  </div>
+
+    <div>
+        <p>原则：</p>
+        <ol>
+            <li>原型尽量不要手动改</li>
+            <li>要改也不要通过实例对象去改</li>
+            <li>通过 类.prototype 属性去修改</li>
+            <li>最好不要直接给prototype去赋值</li>
+        </ol>
+    </div>
+</body>
+</html>
