@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>new运算符</title>
+    <script>
+
+
+    </script>
+</head>
+<body>
+  <div>
+    <p>new运算符是创建对象时要使用的运算符，</p>
+    <ul>
+      <li>使用new时，到底发生了哪些事情：
+        <ol>
+            <li>创建一个普通的JS对象</li>
+            <li>将构建函数的prototype属性，设置为新对象的原型</li>
+            <li>使用实参来执行构造函数，并且将新对象设置为函数中的this</li>
+            <li>如果构造函数返回的是一个非原始值，则该值会作为new运算的返回值返回。如果构造函数的返回值是一个原始值，或者指定没有返回值，则新的对象将会作为返回值返回</li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
