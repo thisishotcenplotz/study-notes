@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组中的方法</title>
+    <script>
+        const arr = ['孙悟空','猪八戒','沙和尚','唐僧','玉皇大帝','如来','白骨精'];
+        const arr2 = ['孙悟空','猪八戒','沙和尚','唐僧','玉皇大帝','如来','白骨精'];
+        const arr3 = ['孙悟空','猪八戒','沙和尚','唐僧','玉皇大帝','如来','白骨精'];
+
+
+        //判断是否为array
+        console.log(Array.isArray(arr));
+
+        //at() 可以根据索引获取数组中的指定元素；且可以写负值
+        console.log(arr.at(-1));
+        console.log(arr.at(-2));
+
+        //concat() 用来连接两个或多个数组
+        arr.concat(arr2,arr3).forEach((i) => {console.log(i)});
+
+    </script>
+</head>
+<body>
+  <div>
+    <p>数组的方法</p>
+
+    <ul>
+      <li>mdn-array->https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</li>
+    </ul>
+  </div>
+</body>
+</html>

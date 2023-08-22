@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组的遍历</title>
+    <script>
+        //任何类型的值都可以称为数组中的元素
+        let arr = [1,'hello',true,null,{'name':'孙悟空'},(i)=>{console.log(i)}];
+
+        //创建数组时尽量要确保数组中存储的数据的类型是相同的
+        let arr2 = ['孙悟空','猪八戒','沙和尚','唐僧','玉皇大帝','如来','白骨精'];
+
+        for(let i = 0; i < arr2.length; i++){
+            console.log(arr2[i]);
+        };
+        console.log('---------------')
+        for(let i = arr2.length-1; i>= 0;i--){
+            console.log(arr2[i]);
+        }
+        //定义一个Person类，类中有两个属性name和age
+
+        class Person{
+            constructor(name,age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+        console.log('---------------')
+        const personArray = [
+            new Person('孙悟空',19),
+            new Person('猪八戒',20),
+            new Person('沙和尚',21),
+            new Person('唐僧',22),
+            new Person('红孩儿',14)
+        ];
+        personArray.forEach((i)=>{
+            if(i.age < 18){
+                console.log(i.name+' is underage')
+            }else{
+                console.log(i.name+'is adult')
+            }
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>

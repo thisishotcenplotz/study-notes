@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象的复制</title>
+    <script>
+        const arr = ['孙悟空','猪八戒','沙和尚','唐僧','玉皇大帝','如来','白骨精'];
+
+        // ... 展开运算符：可以将一个数组中的元素展开到另一个数组中或者作为函数的参数传递
+        //通过展开运算符，也可以对数组进行浅拷贝
+        const arr2 = [...arr]
+        console.log(arr2);
+
+        const sum = (a,b,c)=>{
+            return a + b + c;
+        }
+
+        let rst = sum(...[1,2,3]);
+
+        //对象的复制
+        const obj = {
+            'name':'孙悟空',
+            'age':18
+        }
+        const obj2 = Object.assign({},obj);//浅复制
+        const obj3 = {...obj};//浅复制
+        console.log(obj2);
+        console.log(obj3);
+    </script>
+</head>
+<body>
+</body>
+</html>

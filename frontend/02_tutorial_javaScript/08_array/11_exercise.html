@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组去重</title>
+  <script>
+    const example = [1,2,1,3,2,2,4,5,5,5,5,5,6,7];
+    for(let i = 0; i < example.length; i++){
+      let idx = example.indexOf(example[i],i+1);
+      if(idx !== -1){
+        example.splice(idx,1);
+        i--;
+      }
+    }
+    console.log(example);
+
+
+    //
+    const rst = []
+    for(let ele of example){
+      if(rst.indexOf(ele) === -1){
+        rst.push(ele);
+      }
+    }
+
+    console.log(rst)
+  </script>
+</head>
+<body>
+
+</body>
+</html>

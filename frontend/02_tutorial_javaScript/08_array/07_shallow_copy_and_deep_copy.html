@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>浅拷贝和深拷贝</title>
+    <script>
+        const arr = ['孙悟空','猪八戒','沙和尚','唐僧','玉皇大帝','如来','白骨精'];
+        const a = [
+            {'name':'孙悟空'},
+            {'name':'猪八戒'}
+        ]
+        const b = a.slice(); //浅拷贝
+
+        const c = structuredClone(a); //深拷贝
+
+
+
+    </script>
+</head>
+<body>
+  <div>
+    <p>浅拷贝</p>
+
+    <ul>
+      <li>通常对对象的拷贝都是浅拷贝</li>
+      <li>浅拷贝顾名思义，值对对象复制一层（只复制一层）</li>
+      <li>如果对象中存储的数据是原始值，那么拷贝的深浅是不重要的</li>
+      <li>浅拷贝只会对对象本身进行赋值，不会赋值对象中的属性（或元素）</li>
+    </ul>
+  </div>
+
+  <div>
+      <p>深拷贝</p>
+
+      <ul>
+          <li>深拷贝指不仅复制对象本身，还复制对象中的属性和元素</li>
+          <li>通常情况下，不太使用深拷贝，因为性能差</li>
+      </ul>
+  </div>
+</body>
+</html>
