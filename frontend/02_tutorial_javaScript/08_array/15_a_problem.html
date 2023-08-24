@@ -20,22 +20,27 @@
               new Person('红孩儿',8),
               new Person('白骨精',16)
       ]
-      function filter(arr,condition){
+      function filter(arr,cd){
         const newArr = [];
 
         for(let i = 0; i < arr.length; i++){
-          if(arr[i].age < condition){
+          if(cd(arr[i])){
             newArr.push(arr[i])
           }
         }
         return newArr
       }
 
-      rst = filter(personArr);
+      function fn(a){
+          return a.age < 18
+      }
+
+      rst = filter(personArr,fn);
       console.log(rst)
     </script>
 </head>
 <body>
-
+    <p>一个函数的参数也可以是一个函数</p>
+    <p>如果将函数作为参数传递，那么我们就称这个函数为回调函数（callback）</p>
 </body>
 </html>
