@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>递归练习</title>
+  <script>
+    //一对兔子出生后的两个月后每个月都能生一堆小兔子
+    //编写一个函数，可以用来计算第n个月的兔子的数量
+
+    let fiboNote ={
+      '1':1,
+      '2':1
+    };
+
+    function fibonacci(n){
+      if (n<3){
+        return 1;
+      }else{
+        if(fiboNote[n-1] === undefined || fiboNote[n-2] === undefined){
+          fiboNote[n] = fibonacci(n-1) + fibonacci(n-2);
+          return fiboNote[n];
+        }else{
+          return fiboNote[n-1] + fiboNote[n-2]
+        }
+      }
+    }
+    console.log(fibonacci(150))
+    console.log(fiboNote)
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

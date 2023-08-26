@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包的注意事项</title>
+    <script>
+        function outer(){
+          let someVar = 'some value';
+          let cnt = 0;
+
+          return ()=>{
+            cnt++
+            someVar = someVar.concat(' + inner function process');
+            console.log(someVar);
+            console.log(cnt,' times');
+          }
+        }
+
+        const fn = outer();//独立闭包
+        const fn2 = outer(); //独立闭包
+
+    </script>
+</head>
+<body>
+  <div>
+    <p>闭包声明周期</p>
+    <ul>
+      <li>闭包在外边函数调用时产生，外部函数每次调用都会产生一个全新的闭包</li>
+      <li>在内部函数丢失时销毁</li>
+      <li>闭包主要是用来隐藏一些不希望被外部访问的内容，这就以为着，闭包需要占用一定的内存空间</li>
+      <li>相较于类来说，闭包比较浪费内存空间（类可以使用原型而闭包不能）</li>
+    </ul>
+  </div>
+</body>
+</html>

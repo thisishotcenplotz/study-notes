@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包的原理</title>
+    <script>
+      let a = '全局变量a'
+
+      function fn(){
+        console.log(a);
+      }
+
+      function fn2(){
+        let a = 'fn2中的a';
+        fn();
+      }
+
+      // fn2();
+
+      function fn3(){
+        let a = 'fn3中的啊';
+        function fn4(){
+          console.log(a);
+        }
+        return fn4;
+      }
+      let rst = fn3();
+      rst()
+    </script>
+</head>
+<body>
+  <div>
+    <p>闭包的原理</p>
+    <ul>
+      <li>函数的外层作用域，在函数创建时就已经确定了（词法作用域），和调用的位置无关</li>
+      <li>闭包利用的就是词法作用域</li>
+    </ul>
+  </div>
+</body>
+</html>

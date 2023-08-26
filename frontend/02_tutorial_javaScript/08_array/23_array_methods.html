@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组方法</title>
+    <script>
+      let arr = ['a','c','r','e','f','d','b','q','n','v'];
+      let num = [2,3,1,9,0,4,5,7,8,6,10];
+
+      //sort()  会改变原数组;
+      //sort()  默认会按照Unicode编码进行排序，所以直接使用sort可能会得到1，10，2，3 类似的效果
+      //可以传递一个回调函数，通过回调函数来指定排序规则
+      console.log(arr.sort())
+      console.log(num.sort((a,b)=> a-b)) //升序
+      console.log(num.sort((a,b)=> b-a)) //降序
+
+      //foreach() 回调函数中有三个参数，第一个是数组中的元素，第二个是索引，第三个是当前数组
+      let arrForeach = ['孙悟空','猪八戒','沙和尚','唐僧']
+      arrForeach.forEach((a)=>{console.log(a)});
+
+      //filter() 将数组中符合条件的元素保存到一个新数组中并返回；非破坏性方法
+      console.log(num.filter(( a => a % 2 ===0)))
+
+      //map() 可以根据当前数组生成一个新数组;非破坏性方法
+      console.log(arrForeach.map(ele => '!'+ele+'!'))
+      console.log(arrForeach.map(ele => '<li>' + ele + '</li>>'));
+
+      //reduce() 可以将一个数组中的元素整合为一个元素,可以通过回调函数来指定合并规则
+      console.log(num.reduce((a, b) => a + b));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
