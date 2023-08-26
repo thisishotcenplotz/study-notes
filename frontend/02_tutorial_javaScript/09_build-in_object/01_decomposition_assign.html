@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>解构赋值</title>
+    <script>
+      const arr = ['孙悟空','猪八戒','沙和尚'];
+      let a,b,c
+      [a,b,c] = arr; //解构赋值
+      console.log(a,b,c);
+
+      let [d,e,f,g] = ['唐僧','白骨精','蜘蛛精','玉兔精'];
+      console.log(d,e,f,g);
+
+      let [n1,n2,...n3] = [1,2,3,4,5];
+      console.log(n1,n2,n3);
+
+      //快速交换变量
+      let a1 = 1;
+      let a2 = 2;
+      [a1,a2] = [a2,a1];
+    </script>
+</head>
+<body>
+
+</body>
+</html>

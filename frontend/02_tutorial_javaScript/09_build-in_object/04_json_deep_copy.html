@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON深拷贝</title>
+  <script>
+    const obj = {
+      'name':'孙悟空',
+      'friend':{
+        'name':'猪八戒'
+      }
+    }
+    //浅复制
+    const obj2 = Object.assign({},obj)
+    console.log(obj2)
+
+    //深复制
+    const obj3 = structuredClone(obj);
+    console.log(obj3);
+
+    const obj5 = JSON.parse(JSON.stringify(obj));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

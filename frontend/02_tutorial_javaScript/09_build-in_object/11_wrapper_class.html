@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>包装类</title>
+    <script>
+      let str = 'Hello';
+      let str2 = String('Hello');
+    </script>
+</head>
+<body>
+  <div>
+    <p>在JS中，除了直接创建原始值外，也可以创建原始值的对象；但是千万别这么干</p>
+    <br>
+    <br>
+    <p>包装类</p>
+    <ul>
+      <li>JS中一共有5个包装类（String、Number、Boolean、BigInt、Symbol）</li>
+      <li>通过包装类可以将一个原始值包装为一个对象</li>
+      <li>当我们对一个原始值调用方法或对象时，JS解释器会临时将原始值包装为对应的对象</li>
+      <li>由于原始值会被临时转换为对应的对象，这就意味着对象中的方法都可以直接通过原始值来调用</li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map</title>
+    <script>
+      const map = new Map();
+      map.set('name','孙悟空');
+      map.set(obj2,'呵呵');
+      map.set(NaN,'哈哈哈');
+      console.log(map.get(obj2));
+      map.delete();
+      map.size();
+      map.has('name');
+      map.clear();
+    </script>
+</head>
+<body>
+  <div>
+    <p>Map</p>
+    <ul>
+      <li>Mpa用来存储键值对结构的数据</li>
+      <li>Mpa中任何类型的值都可以成为数据的key</li>
+    </ul>
+  </div>
+</body>
+</html>

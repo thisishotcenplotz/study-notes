@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bind</title>
+    <script>
+        function fn(a,b,c){
+            console.log('fn 执行了~~~',this);
+            console.log(a,b,c);
+        }
+
+        const obj = {'name':'孙悟空'}
+        const newFn = fn.bind(obj,10)
+        newFn(20,30);
+
+        //箭头函数没有自身的this，它的this由外层作用域决定，也无法通过call apply 和bind来修改this
+        //箭头函数中没有arguments
+        const arrowFn = () =>{
+            console.log(this)
+        }
+
+        class myClass{
+            fn = () => {
+                console.log(this);
+            }
+        }
+
+        const mc = new myClass()
+
+        mc.fn();
+    </script>
+</head>
+<body>
+    <div>
+        <p>bind() 是函数的方法，可以用来创建一个新的函数</p>
+        <ul>
+            <li>bind可以为我们的新函数绑定this</li>
+            <li>bind可以为新函数绑定参数</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -26,16 +26,38 @@
     }
     fn(1,2,3,4,5)
     // 作用
-    function anySum(){
+    function anySum(...args){
       let rst = 0;
       for (let i = 0; i < arguments.length; i++) {
         rst += arguments[i];
       }
       return rst;
     }
+
+    function sum2(...args){
+        return args.reduce((a,b) => a+b,0); //0是初始值
+    }
+
+    //当可变参数和普通参数一起使用时，需要将可变参数写到最后；
+    function fn2(a,b,...args){
+        console.log(args);
+    }
   </script>
 </head>
 <body>
-
+    <div>
+        <p>可变参数，在定义函数时可以将参数指定为可变参数</p>
+        <ul>
+            <li>可变参数可以接受任意数量实参，并将其存储在args里</li>
+            <li>可变参数的作用和arguments基本是一致的</li>
+            <li>也有不同点：
+                <ul>
+                    <li>可变参数的名字可以自己指定</li>
+                    <li>可变参数就是一个数组，可以直接使用数组的方法</li>
+                    <li>可变参数可以配合其他参数一起使用</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>

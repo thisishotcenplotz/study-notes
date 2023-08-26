@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map</title>
+  <script>
+    const map = new Map();
+
+    map.set('name','孙悟空');
+    map.set('age',18);
+
+
+    //Map 相互转换 数组
+    // const arr = Array.from(map);
+    const arr = [...map];
+    console.log(arr);
+
+    const map2 = new Map(arr);
+    console.log(map2);
+
+    //遍历
+    map.forEach((a,b) => console.log(a,b));
+
+    for(let i of map.keys()){
+      console.log(map.get(i));
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

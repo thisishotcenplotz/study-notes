@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数的补充</title>
+
+  <script>
+    const obj = {
+      'name':'孙悟空',
+      'age':18
+    }
+    function fn(){
+      console.log(this);
+    }
+    //调用方法1
+    fn();
+
+    //调用方法2
+    fn.call(obj)
+
+    //调用方法3
+    fn.apply(obj);
+
+
+    function sum(a,b){
+      console.log('a = ' + a,'b = '+b,this);
+    }
+
+    sum.call(obj,1,2);
+
+
+    sum.apply(obj,[1,2]);
+
+  </script>
+</head>
+<body>
+  <div>
+    <p>根据函数的调用昂视不同，this的值也不同</p>
+    <ol>
+      <li>以函数的形式调用，this是window</li>
+      <li>以方法形式调用，this是调用方法的对象</li>
+      <li>构造函数中，this是新建的对象</li>
+      <li>箭头函数没有自己的this，由外层作用域决定</li>
+      <li>通过call和apply调用的函数，它们的第一个参数就是函数的this</li>
+      <li>通过bind返回的函数，this由bind第一个参数决定，无法修改</li>
+    </ol>
+  </div>
+
+  <div>
+    <p>调用函数除了通过 函数()这种形式外，还可以通过其他方式来调用函数</p>
+    <p>函数.call()</p>
+    <p>函数.apply()</p>
+    <p>call 和 apply 除了可以调用函数外，还可以指定函数中的this</p>
+  </div>
+</body>
+</html>
