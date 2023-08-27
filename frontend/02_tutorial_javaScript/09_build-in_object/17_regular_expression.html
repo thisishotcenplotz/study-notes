@@ -5,18 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>正则表达式</title>
+    <title>正则练习，找手机号</title>
   <script>
-      let re = new RegExp('a','i');
+    let str ='asdfadfasdfadfadfa1asdfasdfas1asdfadfadf1dfadfadffasdfadf'
+    let re = /(1[3-9]\d)\d{4}(\d{4})/g;
 
-      let reg = /a/i;
 
-      let reg = /\w/;
 
-      let reg = new RegExp('a'); //检查一个字符串中是否有a
-      let reg = /a/;
-      let str = 'b';
-      console.log(reg.test(str));
 
   </script>
 </head>

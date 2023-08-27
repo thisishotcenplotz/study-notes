@@ -5,20 +5,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>正则表达式</title>
-  <script>
-      let re = new RegExp('a','i');
+    <title>exec</title>
+    <script>
+      let str = 'abcaecafcacc';
+      let re = /a([a-z])c/ig;
+      let rst = re.exec(str);
+      while (rst){
+        console.log(rst[0],rst[1],rst[2]);
+        rst = re.exec(str);
+      }
+      console.log(rst);
 
-      let reg = /a/i;
 
-      let reg = /\w/;
-
-      let reg = new RegExp('a'); //检查一个字符串中是否有a
-      let reg = /a/;
-      let str = 'b';
-      console.log(reg.test(str));
-
-  </script>
+    </script>
 </head>
 <body>
 

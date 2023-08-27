@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+
+    <script>
+      /*
+      * 量词
+      * - {m} 正好m个
+      * - {m,} 至少m个
+      * - {m,n} m到n个
+      * -   +   一个以上，相当于{1,}
+      * -   *   任意数量
+      * -   ？ 0到1次，相当于{0,1}
+      */
+
+      //现在想检查字符串中是否有20个a
+
+      let re = /a{3}/ //最少3个a
+      let re = /^a{3}$/ //正好3个a
+      let re = /^(ab){3}$/  //检查是否为ababab
+      let re = /^[a-z]{3}/ //找任意三个字母
+      let re = /^[a-z]{1,3}$/ // 找一到三个以上的字母
+      let re = /^[a-z]+$/ //找一个以上的字母
+      let re = /^ba*/  //b开头，纯b或后面跟着任意数量的a
+      let re= /^ba?/  //b开头，后头紧跟着0-1个a
+
+
+      let str = 'abbaaababab';
+      console.log(re.test(re));
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

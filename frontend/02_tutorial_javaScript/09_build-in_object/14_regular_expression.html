@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+
+    <script>
+      let re = /ab@/;
+
+      let re = /[ab]/;  //检查是否有a或b
+
+      let re = /[a-z]/i   //i 匹配模式 忽略大小写
+
+      let re = /[a-zA-Z0-9]/
+
+      let re = /[^a-z]/  //除了小写字母以外的内容
+
+      let re = /./ //除了换行符以外的任意字符
+
+      let re = /\./ //表示含有.的字符
+
+      let re = /^a/ //匹配以a开头的
+      let re = /k$/  //以k结尾的
+
+      let rst =re.test('acabddd');
+      console.log(rst);
+
+    </script>
+</head>
+<body>
+  <p>| 在正则中表示或：[ab] ---> 数据集汇总是否含有a或b</p>
+  <p>[] 表示字符集：[a-z] 任意小学字母 、[A-Z] 任意大写字母 、[a-zA-z] 任意字母、[0-9] 任意数字</p>
+  <p>^ 表示除了什么什么以外</p>
+  <p>. ： 表示除了换行符以外的字符</p>
+  <p>\w ---> 任意单词字符：[a-zA-Z0-9_]</p>
+  <p>\W ---> 除了单词字符:[^a-zA-Z0-9_]</p>
+  <p>\d ---> 任意数字 [0-9]</p>
+  <p>\D ---> 除了任意数字 [^0-9]</p>
+  <p>\s ---> 空格</p>
+  <p>\S ---> 除了空格</p>
+  <p>\p ---> 单词边界</p>
+  <p>\P ---> 除了单词边界</p>
+  <p>^ ---> 靠头</p>
+  <p>$ ---> 结尾</p>
+
+
+</body>
+</html>
