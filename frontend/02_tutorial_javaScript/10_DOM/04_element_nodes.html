@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>元素节点</title>
+  <style>
+    #box1{
+      width: 400px;
+      height: 400px;
+      background-color: skyblue;
+      color: yellow;
+      font-size: 50px;
+      text-align: center;
+      line-height: 400px;
+    }
+    .note{
+      margin-top: 30px;
+      width: 780px;
+      padding: 20px;
+      background-color: lightyellow;
+      color: darksalmon;
+    }
+  </style>
+</head>
+<body>
+  <div id="box1">
+    我是box1
+    <span class="s1">我s1-1</span>
+  </div>
+
+  <script>
+    const box1 = document.getElementById('box1');
+    const spans = box1.getElementsByTagName('span');
+    const cns = box1.childNodes;
+    const children = box1.children;
+    console.log(children.length);
+  </script>
+
+
+  <div class="note">
+    <p>笔记</p>
+    <br>
+    <ul>
+      <li>
+        div元素的原型链
+        <ul>
+          <li>HTMLDivElement -> HTMLElement -> Element -> Node -> ...</li>
+        </ul>
+      </li>
+
+      <li>通过元素节点对象获取其他节点的方法
+        <ul>
+          <li>element.childNodes 获取挡圈元素的子节点(会包含空白的子节点)</li>
+          <li>element.children 获取当前元素的子元素</li>
+          <li>element.firstElementChild 获取当前元素的第一个子元素</li>
+          <li>element.lastElementChild 获取当前元素的最后一个子元素</li>
+          <li>element.nextElementSibling 获取当前元素的下一个兄弟元素</li>
+          <li>element.previousElementSibling 获取当前元素的前一个兄弟元素</li>
+          <li>element.parentNode 获取当前元素的父节点</li>
+          <li>element.tagName 获取当前元素的标签名</li>
+        </ul>
+      </li>
+
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</body>
+</html>

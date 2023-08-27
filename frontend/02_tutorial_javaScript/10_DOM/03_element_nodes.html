@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>元素节点</title>
+  <style>
+
+    .s1{
+      width: 200px;
+      background-color:skyblue;
+      margin: 30px;
+    }
+    .s1:hover{
+      background-color: hotpink;
+      color: yellow;
+    }
+
+    #btn{
+      font-size: 50px;
+      font-weight: bolder;
+      border: yellow;
+      background-color: skyblue;
+    }
+    #btn:hover{
+      background-color: darkslateblue;
+      color: magenta;
+    }
+    div.d-test{
+      border: 3px solid black;
+      width: 300px;
+      height: 400px;
+      margin-bottom: 20px;
+    }
+    .name-test{
+      border: 3px solid blue;
+      color: darkslateblue;
+      font-size: 30px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <p>元素节点</p>
+    <ul>
+      <li>在网页中，每一个标签都是一个元素节点</li>
+      <li>如何获取元素节点对象?
+        <ul>
+          <li>通过document对象来获取元素节点</li>
+          <li>通过document对象来创建元素节点</li>
+        </ul>
+      </li>
+
+
+      <li>通过document来获取已有的元素节点：
+        <ul>
+          <li>document.getElementById() ---> 根据id来获取一个元素的节点对象</li>
+          <li>document.getElementsByClassName() ---> 根据元素的class属性值来获取一组节点对象;返回的是一个类数组，不能调数组方法；
+            该方法返回的结果是一个实时更新的集合，当网页中添加的元素，集合也会实时刷新
+          </li>
+        </ul>
+      </li>
+
+
+      <li>document.getElementsByTagName()
+        <ul>
+          <li>根据标签名获取一组元素节点对象</li>
+        </ul>
+      </li>
+
+
+      <li>document.getElementsByName()
+        <ul>
+          <li>根据name属性来获取一组元素节点对象</li>
+          <li>返回一个实时更新的集合</li>
+          <li>主要用于表单项</li>
+        </ul>
+      </li>
+
+
+      <li></li>
+    </ul>
+  </div>
+
+
+
+  <button id="btn">立刻来耍</button>
+
+  <span class="s1">我是span1</span>
+  <span class="s1">我是span2</span>
+  <span class="s1">我是span3</span>
+  <span class="s1">我是span4</span>
+  <span class="s1">我是span5</span>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="d-test">我是DIV1</div>
+  <div class="d-test">我是DIV2</div>
+  <div class="d-test">我是DIV3</div>
+  <div class="d-test">我是DIV4</div>
+  <div class="d-test">我是DIV5</div>
+
+  <br>
+  <br>
+
+  <div class="name-test">
+    <form>
+      姓名：<input type="text" name="username">
+      <br>
+      性别：<input type="radio" name="gender" value="male">男
+      <input type="radio" name="gender" value="female">女
+
+    </form>
+  </div>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const span = document.getElementsByClassName('s1');
+    for (let i = 0; i < span.length; i++) {
+      span[i].innerText = `哈哈哈哈~老板来耍 ${i+1}`;
+    }
+    const divs = document.getElementsByTagName('div');
+
+    const input = document.getElementsByName('gender');
+
+    const div2 = document.querySelectorAll('div');
+
+    const h2 = document.createElement('h2');
+    h2.innerText = 'Hello World'
+  </script>
+</body>
+</html>

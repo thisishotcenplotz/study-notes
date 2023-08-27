@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document对象</title>
+    <script>
+        console.log(document.body);
+        console.log(document.title);
+        console.log(document.documentElement);
+        console.log(document.forms);
+    </script>
+</head>
+<body>
+  <div>
+    <p>Document对象</p>
+    <ul>
+      <li>Document对象表示的是整个网页</li>
+      <li>Document对象的原型链
+        <ul>
+            <li>HTMLDocument</li>
+            <li>Document</li>
+            <li>Node</li>
+            <li>EventTarget</li>
+            <li>Object.prototype</li>
+            <li>null</li>
+        </ul>
+      </li>
+        <li>凡是在原型链上存在的对象的属性和方法都可以通过document去调用</li>
+        <li>部分属性：
+            <ul>
+                <li>document.documentElement ---> html根元素</li>
+                <li>document.head ---> head元素</li>
+                <li>document.title ---> title元素</li>
+                <li>document.body ---> body元素</li>
+                <li>document.links ---> 获取网页中所有超链接</li>
+            </ul>
+        </li>
+    </ul>
+  </div>
+</body>
+</html>
