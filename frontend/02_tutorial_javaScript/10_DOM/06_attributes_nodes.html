@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>属性节点</title>
+      <link rel="stylesheet" href="../note.css">
+  </head>
+  <body>
+    <div class="note">
+      <p>属性节点</p>
+      <ul>
+        <li>在DOM中也是一个对象，通常不需要获取对象而是直接通过元素即可完成对其的各种操作</li>
+        <li>如何操作属性节点：
+            <ol>
+                <li>方式一:
+                    <ul>
+                        <li>读取:元素.属性名(注意：class属性，需要使用className来读取)</li>
+                        <li>修改: 元素.属性名 = 属性值</li>
+                    </ul>
+                </li>
+
+                <li>方式二:
+                    <ul>
+                        <li>读取：元素.getAttribute(属性名:String)</li>
+                        <li>修改：元素.setAttribute(属性名,属性值)</li>
+                        <li>删除：元素.removeAttribute(属性名:String)</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+      </ul>
+    </div>
+
+    <br>
+    <br>
+
+    <div>
+      <span>
+        用户名： <input class="a" type="text" name="username" value="admin">
+      </span>
+    </div>
+
+    <script>
+        const input = document.getElementsByName('username')[0];
+        const input2 = document.querySelector("[name=username]");
+
+        console.log(input);
+        console.log(input2);
+        console.log(input.name);
+        console.log(input.value);
+        console.log(input.type);
+        console.log(input.className);
+    </script>
+  </body>
+</html>

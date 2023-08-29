@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件</title>
+    <link rel="stylesheet" href="../note.css">
+</head>
+<body>
+  <div class="note">
+    <p>事件</p>
+    <ul>
+      <li>事件就是用户也页面之间发生的交互行为；比如：点一下按钮、鼠标移动、双击按钮、敲击键盘...</li>
+      <li>可以通过为事件绑定响应函数（回调函数），来完成和用户之间的交互</li>
+      <li>绑定响应函数的方式：
+        <ol>
+          <li>可以直接在元素的属性中设置</li>
+          <li>可以通过元素的指定属性来设置回调函数的方式来绑定事件(一个事件只能绑定一个响应函数)</li>
+          <li>可以通过元素的addEventListener()方法来绑定事件 ---> 可以绑定多个事件！</li>
+        </ol>
+      </li>
+    </ul>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+  <div>
+<!--    <button id="btn" onclick="alert('你点我干嘛')">点我一下</button>-->
+    <button id="btn">点我一下</button>
+  </div>
+  <script>
+    const btn = document.getElementById('btn');
+    // btn.onclick = ()=>{
+    //   alert('我又被点了一下~~');
+    // }
+    btn.addEventListener('click',()=> alert('你老点我干嘛啊~'));
+    btn.addEventListener('click',()=> alert('嗷嗷嗷~'));
+  </script>
+
+</body>
+</html>
