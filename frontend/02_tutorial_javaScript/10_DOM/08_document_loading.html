@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../note.css">
+    <title>文档加载</title>
+    <style>
+        #btn:hover{
+            color: yellow;
+            background-color: skyblue;
+        }
+    </style>
+    <script defer src="./script/script.js">
+        //方法一：
+        // window.onload = function(){
+        //  btn.addEventListener('click',() => console.log(`${Date.now()}\tonCLick\tdocument-loading`));
+        // };
+
+        //方法二：
+        // window.addEventListener('load',function(){
+        //     const onClick = function(){
+        //         console.log(`${Date.now()}\tonCLick\tdocument-loading`)
+        //     }
+        // });
+
+        //方法三：
+        // document.addEventListener('DOMContentLoaded',function(){
+        //    const btn = document.getElementById('btn');
+        //    btn.addEventListener('click',()=>{`${Date.now()}\tonCLick\tdocument-loading`});
+        // });
+    </script>
+</head>
+<body>
+    <div class="note">
+        <p>网页是自上向下加载的，如果将JS代码编写在网页的上面，JS代码在执行时，网页还没有加载完毕，这时会出现无法获取DOM对象的情况</p>
+        <br>
+        <p>解决方案：</p>
+        <ol>
+            <li>将script标签编写在body的最后边 --->(*****)</li>
+            <li>将代码编写到这个回调函数中：window.onload = function(){需要加载结束后执行的代码}</li>
+            <li>将代码编写到document对象的DocumentContentLoaded的回调函数中(执行时机更早) </li>
+            <li>将代码编写到外部JS文件中，然后以defer的形式引用 (这种执行机制更早，早于上面那种) ---> (开发中最常使用) --->(*****)</li>
+        </ol>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div>
+        <button id="btn">点我一下</button>
+    </div>
+
+<!--    <script>-->
+<!--        btn.addEventListener('click',() => console.log(`${Date.now()}\tonCLick\tdocument-loading`))-->
+<!--    </script>-->
+</body>
+</html>
