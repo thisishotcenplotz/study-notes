@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>删除员工信息</title>
+    <style>
+        .outer {
+            width: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        td, th {
+            border: 1px solid black;
+            padding: 10px 0;
+        }
+
+        form div {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="outer">
+
+    <table>
+        <tbody>
+        <tr>
+            <th>姓名</th>
+            <th>邮箱</th>
+            <th>薪资</th>
+            <th>操作</th>
+        </tr>
+
+        <tr>
+            <td>孙悟空</td>
+            <td>swk@hotcenplotz.com</td>
+            <td>10000</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+
+
+        <tr>
+            <td>猪八戒</td>
+            <td>zbj@hotcenplotz.com</td>
+            <td>9000</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+
+
+        <tr>
+            <td>沙和尚</td>
+            <td>shs@hotcenplotz.com</td>
+            <td>8500</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form action="#">
+        <div>
+            <label for="name">姓名</label>
+            <input type="text" id="name">
+        </div>
+
+        <div>
+            <label for="email">邮件</label>
+            <input type="email" id="email">
+        </div>
+
+        <div>
+            <label for="salary">薪资</label>
+            <input type="number" id="salary">
+        </div>
+        <button id="btn" type="button">添加</button>
+
+    </form>
+</div>
+
+<script>
+    // 点击员工删除超链接后，删除用户信息
+    // 获取所有超链接
+    const links = document.links;
+
+    for (let i = 0; i < links.length; i++) {
+        links[i].onclick = function () {
+            const tr = this.parentNode.parentNode;
+            const name = tr.getElementsByTagName('td')[0].textContent;
+            if (confirm(`确认要删除${name}吗？`)) {
+                tr.remove();
+            }
+        }
+    }
+    const tbody = document.querySelector('tbody');
+    const btn = document.getElementById('btn');
+    btn.onclick = function (){
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const salary = document.getElementById('salary').value;
+
+        const tr = document.createElement('tr');
+        const nameTd = document.createElement('td');
+        const emailTd = document.createElement('td');
+        const salaryTd = document.createElement('td');
+        nameTd.textContent = name;
+        emailTd.textContent = email;
+        salaryTd.textContent = salary;
+        tr.appendChild(nameTd);
+        tr.appendChild(emailTd);
+        tr.appendChild(salaryTd);
+        tr.insertAdjacentHTML('beforeend','<td><a href="javascript:;">删除</a></td>');
+        tbody.appendChild(tr);
+
+        for (let i = 0; i < links.length; i++) {
+        links[i].onclick = function () {
+            const tr = this.parentNode.parentNode;
+            const name = tr.getElementsByTagName('td')[0].textContent;
+            if (confirm(`确认要删除${name}吗？`)) {
+                tr.remove();
+            }
+        }
+    }
+
+
+    }
+</script>
+</body>
+</html>
