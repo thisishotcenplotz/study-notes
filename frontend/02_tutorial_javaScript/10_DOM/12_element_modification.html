@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>元素修改</title>
+    <link rel="stylesheet" href="../note.css">
+</head>
+<body>
+  <div class="note">
+    <p>需求</p>
+    <ol>
+      <li>点击按钮后，向列表中添加一个唐僧</li>
+    </ol>
+  </div>
+  <hr>
+  <div class="lesson">
+    <button id="btn-1">按钮1</button>
+    <button id="btn-2">按钮2</button>
+    <hr>
+    <ul id="list">
+      <li id="swk">孙悟空</li>
+      <li id="zbj">猪八戒</li>
+      <li id="shs">沙和尚</li>
+    </ul>
+  </div>
+
+  <script>
+    const btn1 = document.getElementById('btn-1');
+    const btn2 = document.getElementById('btn-2');
+    const ulList = document.getElementById('list');
+
+    btn1.addEventListener('click',()=>{
+      const li = document.createElement('li');
+      li.textContent = '唐僧';
+      li.setAttribute('id','ts');
+
+      //向元素ul中添加元素
+      //方法1：
+      // ulList.appendChild(li);
+
+      //方法2
+      ulList.insertAdjacentElement('beforeend',li);
+      ulList.insertAdjacentHTML('beforeend','<li id="bgj">白骨精</li>');
+    });
+    btn2.addEventListener('click',()=>{
+      const swk = document.getElementById('swk');
+      const zzj = document.createElement('li');
+      zzj.id = 'zzj';
+      zzj.textContent = '蜘蛛精';
+      swk.replaceWith(zzj);
+    });
+  </script>
+</body>
+</html>
