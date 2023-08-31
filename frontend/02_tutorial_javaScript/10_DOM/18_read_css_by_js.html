@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>通过JS读取并修改CSS样式</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        .box1::before{
+            content: "Hello";
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">变大</button>
+    <button id="btn2">变小</button>
+    <hr>
+
+    <p id="show"></p>
+    <hr>
+    <div class="box1">
+        
+    </div>
+
+<script>
+    const btn = document.getElementById('btn');
+    const btn2 = document.getElementById('btn2');
+    const box1 = document.querySelector('.box1');
+    const show = document.getElementById('show');
+
+    const updateShow = ()=>{
+        let stuff = window.getComputedStyle(box1);
+        let str = `当前尺寸为：${stuff.width} * ${stuff.height}`
+        show.innerText = str;
+    }
+
+    btn.onclick = function(){
+        const styleObj = window.getComputedStyle(box1);
+        const beforeStyle = getComputedStyle(box1,'::before');
+        box1.style.width = parseInt(styleObj.width)*1.1 + "px";
+        box1.style.height = parseInt(styleObj.height)*1.1 + "px";
+        updateShow();
+        // console.log(parseInt(styleObj.width) + 100);
+
+        // console.log(styleObj.backgroundColor);
+    }
+    btn2.onclick = function(){
+        const styleObj = window.getComputedStyle(box1);
+        box1.style.width = parseInt(styleObj.width)/1.1 + "px";
+        box1.style.height = parseInt(styleObj.height)/1.1 + "px";
+        updateShow();
+    }
+
+    updateShow();
+</script>
+</body>
+</html>
