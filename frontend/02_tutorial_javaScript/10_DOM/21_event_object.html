@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件对象</title>
+    <link rel="stylesheet" href="../note.css">
+    <style>
+      #box1 {
+        width: 300px;
+        height: 300px;
+        border: 3px solid skyblue;
+        background-color: #bfa;
+      }
+    </style>
+</head>
+<body>
+  <div id="box1">
+
+  </div>
+
+  <hr>
+
+  <div class="note">
+    <p>事件</p>
+    <ul>
+      <li>事件对象
+        <ul>
+            <li>事件对象是由浏览器在在事件触发时所创建的对象，这个对象中封装了事件相关的各种信息</li>
+            <li>通过事件对象可以获得事件的详细信息；比如：鼠标的坐标、键盘的按键</li>
+            <li>浏览器在创建事件对象之后，会将事件对象作为作为响应函数的参数传递，所以我们可以在事件的回调函数中定义一个形参来接受事件对象</li>
+            <li></li>
+        </ul>
+      </li>
+
+
+    </ul>
+  </div>
+
+  <script>
+    const box1 = document.getElementById('box1');
+    let cnt = 0;
+    box1.addEventListener('mousemove',()=>{
+        console.log(`${Date.now()} mouse moved ---> ${cnt}`);
+        cnt++;
+    })
+
+  </script>
+</body>
+</html>
