@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>其他读取CSS的方式</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            margin: 50px;
+            border: 10px solid red;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <hr>
+    <div id="box1"></div>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const box1 = document.getElementById('box1');
+        btn.addEventListener('click',()=>{
+            console.log(box1.clientWidth,'*',box1.clientHeight);
+            console.log(box1.offsetWidth,'*',box1.offsetHeight);
+        });
+    </script>
+</body>
+</html>
