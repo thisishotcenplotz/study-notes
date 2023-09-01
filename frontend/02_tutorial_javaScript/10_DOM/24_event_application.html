@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件的委派</title>
+</head>
+<body>
+    <button id="btn">点击添加</button>
+    <hr>
+  <ul id="list">
+    <li><a href="javascript:;">链接1</a></li>
+    <li><a href="javascript:;">链接2</a></li>
+    <li><a href="javascript:;">链接3</a></li>
+    <li><a href="javascript:;">链接4</a></li>
+  </ul>
+
+  <script>
+      const links = document.querySelectorAll('ul a');
+      const btn = document.getElementById('btn');
+      const list = document.getElementById('list');
+
+      document.addEventListener('click',(event)=>{
+          alert(event.target.textContent);
+      })
+      btn.addEventListener('click',()=>{
+          list.insertAdjacentHTML('beforeend','<li><a href="javascript:;">新超链接</a></li>')
+      })
+  </script>
+</body>
+</html>

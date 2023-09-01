@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件冒泡小练习</title>
+  <style>
+    #box1{
+      width: 100px;
+      height: 100px;
+      background-color: greenyellow;
+      border-radius: 50%;
+      position: absolute;
+    }
+    #box2{
+      width: 500px;
+      height: 500px;
+      background-color: #0e8c8c;
+    }
+    #box3{
+      height: 200px;
+      width: 200px;
+      background-color: tomato;
+    }
+    #box4 {
+      width: 100px;
+      height: 1100px;
+      background-color: orange;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div id="box1"></div>
+  <div id="box2"></div>
+  <div id="box3" onclick="alert(3)">
+    <div id="box4" onclick="alert(4)"></div>
+  </div>
+  <script>
+    /*让小绿球和鼠标一起移动*/
+    const box1 = document.getElementById('box1');
+    const box2 = document.getElementById('box2');
+    document.addEventListener('mousemove',event =>{
+
+      box1.style.left = event.clientX + 'px';
+      box1.style.top = event.clientY + 'px';
+    });
+    box2.addEventListener('mousemove',event =>{
+      // event.stopPropagation();
+    });
+  </script>
+</body>
+</html>
