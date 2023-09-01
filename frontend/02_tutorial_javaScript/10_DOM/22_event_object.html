@@ -14,25 +14,71 @@
         background-color: greenyellow;
         border: 3px solid skyblue;
       }
+      #box2{
+          width: 200px;
+          height: 200px;
+          background-color: #f5d500;
+      }
+      #box3{
+          width: 100px;
+          height: 100px;
+          background-color: #ac0013;
+      }
+
     </style>
 </head>
 <body>
-  <div id="box1"></div>
+  <div id="box1">
+      <div id="box2">
+          <div id="box3"></div>
+      </div>
+  </div>
+  <a id="chao" href="https://lilichao.com">超链接</a>
 
   <hr>
   <div class="note">
       <p>在DOM中存在着多种不同的事件对象</p>
       <ul>
           <li>多种事件对象有一个共同的祖先 Event</li>
-          <li></li>
+          <li>事件的冒泡（bubble）
+            <ul>
+                <li>事件的冒泡就是指事件的向上传导</li>
+                <li>当元素上的某个事件被触发后，其祖先元素上的事件也会触发</li>
+                <li>冒泡的存在大大的简化了JS代码的编写，但是在一些场景下我们并不希望冒泡的存在</li>
+                <li>不希望冒泡时，可以通过事件对象取消冒泡</li>
+            </ul>
+          </li>
       </ul>
   </div>
   <script>
       const box1 = document.getElementById('box1');
+      const box2 = document.getElementById('box2');
+      const box3 = document.getElementById('box3');
+      const chao = document.getElementById('chao');
+
+      chao.onclick = function(event){
+          // event.preventDefault();
+          alert('被点了');
+      }
 
       box1.addEventListener('click',event => {
-          console.log(`(${event.screenX},${event.screenY})`)
-      })
+          // console.log(`(${event.screenX},${event.screenY})`)
+          // event.stopPropagation();
+          console.log(event.target);
+          alert('我是box1');
+      });
+
+      box2.addEventListener('click',function(event){
+          // event.stopPropagation();
+          alert('我是box2');
+      });
+      box3.addEventListener('click',function (event){
+          event.stopPropagation();
+          // alert('this is box3');
+          console.log(event.target);
+      });
+
+
   </script>
 </body>
 </html>
