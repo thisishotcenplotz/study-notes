@@ -34,16 +34,14 @@
             <li></li>
         </ul>
       </li>
-
-
     </ul>
   </div>
 
   <script>
     const box1 = document.getElementById('box1');
     let cnt = 0;
-    box1.addEventListener('mousemove',()=>{
-        console.log(`${Date.now()} mouse moved ---> ${cnt}`);
+    box1.addEventListener('mousemove',(event)=>{
+        console.log(`${Date.now()} mouse moved ---> ${cnt}---(${event.screenX},${event.screenY})`);
         cnt++;
     })
 

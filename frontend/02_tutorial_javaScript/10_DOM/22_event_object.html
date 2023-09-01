@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件对象</title>
+    <link rel="stylesheet" href="../note.css">
+    <style>
+      #box1{
+        width: 300px;
+        height: 300px;
+        background-color: greenyellow;
+        border: 3px solid skyblue;
+      }
+    </style>
+</head>
+<body>
+  <div id="box1"></div>
+
+  <hr>
+  <div class="note">
+      <p>在DOM中存在着多种不同的事件对象</p>
+      <ul>
+          <li>多种事件对象有一个共同的祖先 Event</li>
+          <li></li>
+      </ul>
+  </div>
+  <script>
+      const box1 = document.getElementById('box1');
+
+      box1.addEventListener('click',event => {
+          console.log(`(${event.screenX},${event.screenY})`)
+      })
+  </script>
+</body>
+</html>
