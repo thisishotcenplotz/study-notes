@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>轮播图练习</title>
+      <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            img{
+                width: 500px;
+                height: 300px;
+                vertical-align: top;
+            }
+            ul{
+                list-style: none;
+            }
+            .outer{
+                width: 500px;
+                height: 300px;
+                margin: 100px auto;
+                position: relative;
+            }
+            .img-list{
+                height: 300px;
+            }
+            .img-list li{
+                position: absolute;
+                opacity: 0;
+                transition: opacity 1s;
+            }
+            li.current{
+                z-index: 1;
+                opacity: 1;
+            }
+            .prev-next a{
+                height: 40px;
+                font-size: 40px;
+                color: #fff4e4;
+                font-weight: bold;
+                text-decoration: none;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                z-index: 2;
+                opacity: .5;
+            }
+            .prev-next a:hover{
+                opacity: 1;
+            }
+            #prev{
+                left: 10px;
+            }
+            #next {
+                right: 10px;
+            }
+      </style>
+  </head>
+  <body>
+  
+    <div class="outer">
+      <ul class="img-list">
+        <li class="current"><a href="#"><img src="./images/1.webp"></a></li>
+        <li><a href="#"><img src="./images/2.webp"></a></li>
+        <li><a href="#"><img src="./images/3.webp"></a></li>
+        <li><a href="#"><img src="./images/4.webp"></a></li>
+        <li><a href="#"><img src="./images/5.webp"></a></li>
+      </ul>
+
+        <div class="prev-next">
+            <a id="prev" href="javascript:;"> < </a>
+            <a id="next" href="javascript:;"> > </a>
+        </div>
+    </div>
+    
+
+  
+  </body>
+
+  <script>
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
+      const outer = document.getElementsByClassName('outer')[0];
+
+      //设置切换
+      function changeImage(dir){
+          //获取当前显示的图片
+          const current = document.querySelector('.img-list .current');
+
+          if(dir === 'next'){
+              //获取下一个图片
+              const nextImage = current.nextElementSibling || document.querySelector('.img-list li:first-child');
+              //切换显示状态
+              current.classList.remove('current');
+              nextImage.classList.add('current');
+          }else if (dir === 'prev'){
+              //获取下一个图片
+              const nextImage = current.nextElementSibling || document.querySelector('.img-list li:first-child');
+
+              //切换显示状态
+              current.classList.remove('current');
+              nextImage.classList.add('current');
+          }
+      }
+      //实现自动切换图片
+      const toggleChange = (function(){
+          let timer = null;
+          return ()=>{
+              //判断timer是否为null
+              if(timer === null){
+                  timer = setTimeout(function auto(){
+                      changeImage('next');
+                      //轮播
+                      timer = setTimeout(auto,3000);
+
+                  },3000)
+              }else{
+                  clearTimeout(timer);
+                  timer = null;
+              }
+          }
+      })();
+
+      //开启自动切换
+      toggleChange();
+
+      //点击按钮切换图片
+      prev.onclick = ()=>{
+            changeImage('prev');
+      }
+
+      next.onclick = ()=>{
+            changeImage('next');
+      }
+
+      outer.onmouseenter = ()=>{
+          toggleChange();
+      }
+      outer.onmouseleave = ()=>{
+          toggleChange();
+      }
+
+  </script>
+</html>

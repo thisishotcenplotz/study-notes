@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件循环</title>
+    <link rel="stylesheet" href="../note.css">
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <div class="note">
+        <p>事件循环(event loop)</p>
+        <ul>
+            <li>函数在每次执行,都会产生一个执行环境</li>
+            <li>执行环境负责存储函数执行时产生的一切数据 </li>
+            <li>问题：函数的执行环境要存储在哪里？
+                <ul>
+                    <li>函数的执行环境存储到了衣蛾叫做'调用栈的地方'</li>
+                    <li>栈，是一种数据结构，特点后进先出</li>
+                    <li>队列，是一种数据结构，特点是先进先出</li>
+                </ul>
+            </li>
+            <li>调用栈（call stack）：
+                <ul>
+                    <li>调用栈负责存储函数的执行环境</li>
+                    <li>当一个函数被调用时，它的执行环境会作为一个栈帧，插入到调用栈的栈顶，函数执行完毕其栈帧会自动从栈中弹出 </li>
+                </ul>
+            </li>
+            <li>消息队列
+                <ul>
+                    <li>消息队列负责存储要执行的函数</li>
+                    <li>当我们触发一个事件时，其响应函数并不是直接就添加到调用栈中，因为调用栈中有可能存储了一些还未执行完的代码</li>
+                    <li>事件触发后，JS引擎是将事件的响应函数插入到消息队列排队</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function fn(){
+            let a = 10;
+            let b = 20;
+            function fn2(){
+                console.log('fn2');
+            }
+            fn2();
+            console.log('fn~')
+        }
+
+        const btn = document.getElementById('btn');
+        btn.onclick = function (){
+            console.log('被按了~');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击切图联系</title>
+
+  <style>
+    .outer{
+      width: 800px;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    img{
+      width: 800px;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <p id="info">总共5张图片，当前为第1张</p>
+    <div class="img-wrapper">
+      <img src="./images/1.webp" alt="This is a animal image">
+    </div>
+    <div class="btn-wrapper">
+      <button id="btn-prev">上一张</button>
+      <button id="auto">自动</button>
+      <button id="btn-next">下一张</button>
+    </div>
+  </div>
+
+  <script>
+    const img = document.getElementsByTagName('img')[0];
+    const prev = document.getElementById('btn-prev');
+    const next = document.getElementById('btn-next');
+    const imgAddr = ["./images/1.webp","./images/2.webp","./images/3.webp","./images/4.webp","./images/5.webp"]
+    const info = document.getElementById('info');
+    const autoBtn = document.getElementById('auto');
+    let curPos = 0;
+
+    //添加一个图片自动切换的功能
+
+    prev.addEventListener('click',()=>{
+      clearTimeout(timer);
+      curPos--;
+      if(curPos < 0) curPos = imgAddr.length - 1;
+      img.src = imgAddr[curPos];
+      info.textContent = `总共${imgAddr.length}张图片,当前为第${curPos+1}张`;
+    });
+    next.addEventListener('click',()=>{
+      clearTimeout(timer);
+      curPos++;
+      if(curPos > imgAddr.length -1) curPos=0;
+      img.src = imgAddr[curPos];
+      info.textContent = `总共${imgAddr.length}张图片,当前为第${curPos+1}张`;
+    });
+
+    let timer;
+    autoBtn.onclick = ()=>{
+        clearTimeout(timer);
+        timer = setTimeout(function auto(){
+            curPos++;
+            if(curPos > imgAddr.length -1) curPos = 0;
+            img.src = imgAddr[curPos];
+            info.textContent = `总共${imgAddr.length}张图片,当前为第${curPos+1}张`;
+            timer = setTimeout(auto,2000);
+        },2000);
+    }
+  </script>
+</body>
+</html>

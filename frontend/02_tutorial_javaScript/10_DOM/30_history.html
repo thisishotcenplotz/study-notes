@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>history</title>
+</head>
+<body>
+  <button id="btn">点我一下</button>
+  <script>
+    const btn = document.getElementById('btn');
+    btn.onclick = () =>{
+      console.log(history.length);
+      history.back(); //回退
+      history.forward(); //前进
+      history.go(2); //可以向前或向后跳转且可以指定跳转数量
+    }
+  </script>
+</body>
+</html>

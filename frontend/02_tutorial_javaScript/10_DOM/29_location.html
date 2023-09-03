@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>location</title>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <form action="#">
+      <label>
+        用户名：
+        <input type="text" name="username">
+      </label>
+    </form>
+
+    <script>
+      const btn = document.getElementById('btn');
+      btn.addEventListener('click',()=>{
+        //location表示的是浏览器地址栏的信息
+        // - 可以直接将location的值修改为一个新的地址，这样会使得网页发生跳转
+        // - location.href 可以获取当前的网址
+        // - location.assign() 跳转到一个新的地址
+        // - location.replace() 跳转到一个新的地址，且无法回退
+        // - location.reload(true) 可以强制清除缓存
+        // alert(location.href);
+        // alert(location.port)
+        location.reload(true);
+      })
+    </script>
+</body>
+</html>
