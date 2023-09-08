@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../note.css">
+    <link rel="stylesheet" href="note.css">
     <title>前端核心技术体系图</title>
 </head>
 <body>
@@ -152,8 +152,77 @@
         </li>
     </ul>
     <hr>
+        <p>http协议（Hypertext transfer protocol）</p>
+        <ul>
+            <li>HTTP协议是浏览器与服务器之间的协议</li>
+            <li>HTTP报文
+                <ul>
+                    <li>常见请求方法
+                        <ul>
+                            <li>GET 获取数据</li>
+                            <li>POST 新增数据</li>
+                            <li>PUT/PATCH 更新数据</li>
+                            <li>DELETE 删除数据</li>
+                            <li>HEAD/OPTIONS/CONNECT/TRACE 较少使用</li>
+                        </ul>
+                    </li>
 
+                    <li>请求报文
+                        <ul>
+                            <li>请求行（请求方法、URL、HTTP版本号）</li>
+                            <li>请求头（由键值对组成）</li>
+                            <li>请求体</li>
+                        </ul>
+                    </li>
+                    <li>响应报文
+                        <ul>
+                            <li>响应行（HTTP协议、状态码、状态描述）</li>
+                            <li>响应头</li>
+                            <li>响应体
+                                <ul>
+                                    <li>常见响应体：</li>
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>JavaScript</li>
+                                    <li>图片</li>
+                                    <li>视频</li>
+                                    <li>JSON</li>
+                                </ul>
+                            </li>
+                            <li>常见状态码
+                                <ul>
+                                    <li>200 请求成功</li>
+                                    <li>403 请求禁止</li>
+                                    <li>404 找不到资源</li>
+                                    <li>500 服务器内部错误</li>
+                                    <li>常见分类
+                                        <ul>
+                                            <li>1XX 信息响应</li>
+                                            <li>2XX 成功响应</li>
+                                            <li>3XX 重定向消息</li>
+                                            <li>4XX 客户端错误响应</li>
+                                            <li>5XX 服务端错误响应</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     <hr>
+    <p>IP</p>
+    <ul>
+        <li>本地回环IP：127.0.0.1</li>
+        <li>局域网IP（192.168.0.0;172.16.0.0;10.0.0.0）</li>
+    </ul>
+    <hr>
+    <p>端口</p>
+    <ul>
+        <li>80</li>
+        <li>443</li>
+    </ul>
 </div>
 </body>
 </html>
