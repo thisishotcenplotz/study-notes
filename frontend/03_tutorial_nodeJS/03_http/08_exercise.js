@@ -5,20 +5,17 @@ let cnt = 1;
 //2. 创建服务对象
 const server = http.createServer((request,response)=>{
     console.log(`------------${cnt}:${Date.now()}--------------`);
-    let {method} = request.method;
-    let {pathname} = new URL(request.url,'http://127.0.0.1');
-
+    response.statusCode = 200;
+    response.statusMessage = 'Yo!';
     response.setHeader('content-type','text/html;charset=utf-8');
+    response.setHeader('abc','def');
+    response.setHeader('server','habibi');
 
-    //判断路径
-    if(method === 'GET' && pathname === '/login'){
-        response.end('登录页面');
-    }else if (method === 'GET' && pathname === '/reg'){
-        response.end('注册页面');
-    }else{
-        response.end('not found');
-    }
-
+    response.write('1.xxx<br>');
+    response.write('2.xxx<br>');
+    response.write('3.xxx<br>');
+    response.write('4.xxx<br>');
+    response.end();
 
     cnt++;
 
