@@ -4,11 +4,12 @@
   "description": "express framework tutorial",
   "main": "index.js",
   "scripts": {
-    "start": "node 10_static_Middleware.js"
+    "start": "node 12_main.js"
   },
   "author": "Der Hotcenplotz",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-generator": "^4.14.1"
   }
 }

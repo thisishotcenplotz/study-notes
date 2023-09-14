@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>记账</title>
+    <link rel="stylesheet" href="/css/account.css">
+</head>
+<body>
+    <div class="container">
+        <div id="title">增加记录</div>
+        <div id="content">
+            <form action="/account/create" method="post">
+                <label>
+                    <p class="description">事项</p>
+                    <input class="data" type="text" name="subject">
+                </label>
+                <label>
+                    <p class="description">时间</p>
+                    <input class="data" type="date" name="bizdate">
+                </label>
+                <label>
+                    <p class="description">金额</p>
+                    <input class="data" type="text" name="amount">
+                </label>
+                <label>
+                    <p class="description">类型</p>
+                    <select class="data">
+                        <option value="1">收入</option>
+                        <option value="-1">支出</option>
+                    </select>
+                </label>
+                <label>
+                    <p class="description">备注</p>
+                    <textarea class="data-note" name="remark" cols="30" rows="10"></textarea>
+                </label>
+                <button type="submit" class="btn">提交</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

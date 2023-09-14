@@ -17,8 +17,8 @@ const server = http.createServer((request,response)=>{
     } else if (pathname === '/index.css'){
         let css = fs.readFileSync(__dirname + '/index.css');
         response.end(css);
-    } else if (pathname === '/index.js'){
-        let js = fs.readFileSync(__dirname + '/index.js');
+    } else if (pathname === '/accounts.js'){
+        let js = fs.readFileSync(__dirname + '/accounts.js');
         response.end(js);
     }else {
         response.statusCode = 404;
