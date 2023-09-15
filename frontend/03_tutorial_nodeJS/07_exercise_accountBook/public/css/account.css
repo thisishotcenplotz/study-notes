@@ -38,10 +38,10 @@
     background-color: skyblue;
 }
 .btn{
-    background-color: antiquewhite;
+    background-color: skyblue;
     height: 50px;
-    width: 160px;
-    color: #8f1eb4;
+    width: 85%;
+    color: whitesmoke;
     font-size: 20px;
     margin: 50px auto;
     display: block;
