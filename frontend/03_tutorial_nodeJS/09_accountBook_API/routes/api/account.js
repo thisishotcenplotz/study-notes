@@ -1,45 +1,21 @@
 const express = require('express');
-const moment = require('moment');
-const mongoDB = require('../../database/db/mongo');
+const mongo = require('../../database/db/mongo');
 const accountRecord = require('../../database/model/accountRecord');
+const mongoose = require("mongoose");
 const router = express.Router();
 
-router.get('/',(req,res)=>{
-    accountRecord
-        .find()
-        .sort({time: -1})
-        .then((err,data) => {
-            if(err){
-                res.json({
-                    code:1001,
-                    msg:'Failed',
-                    data:null
-                });
-                return;
-            }
-            res.json({
-                code: '0000',
-                msg: 'Data read',
-                data: data
-            })
-        })
+router.get('/',async (req, res) => {
+    let data = await accountRecord.find({});
+    res.json(data)
 });
 
-router.post('/',(req,res)=>{
-    accountRecord.create({
-        ...req.body,
-        time:moment(req.body.time).toDate()
-    },(err,data)=>{
-        if(err){
-            res.status(500).send('failed to add data');
-            return;
-        }
-        res.json({
-            code:'0000',
-            msg:'Created',
-            data:data
 
-        })
-    })
+router.post('/',(req,res)=>{
+
+    accountRecord.create(req.body)
+        .then(rst => console.log(`[Record Added] ${Date.now()} ${req.body.title}`));
+
+    res.redirect('/success.html');
+
 });
 module.exports = router;

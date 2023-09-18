@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/record.css">
+</head>
+<body>
+    <div class="container">
+        <h3 style="font-size: 50px;padding-top: 50px;text-align: center"><a href="/" style="text-decoration-line: none">记账本</a></h3>
+        <hr>
+        <ul id="list" class="list"></ul>
+    </div>
+
+    <script>
+        let dataToFill = document.getElementById('list');
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET','/account');
+        xhr.send();
+        xhr.responseType = 'json';
+        xhr.onload = () => {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                xhr.response.forEach((item)=>{
+                    let theType;
+                    let theStyle;
+                    if(item.type === -1){
+                        theType = '支出';
+                        theStyle = 'cost'
+                    }else{
+                        theType = '收入';
+                        theStyle = 'income'
+                    }
+                    dataToFill.insertAdjacentHTML('beforeend',`
+                        <li class="data">
+                            <div class="data-dt ${theStyle}">${item.time}</div>
+                            <div class="data-detail">
+                                <div class="data-detail-describe">${item.title}</div>
+                                <div class="data-detail-type ${theStyle}">${theType}</div>
+                                <div class="data-detail-amount">${item.account}元</div>
+                            </div>
+                        </li>
+                    `);
+                })
+            }
+        }
+    </script>
+</body>
+</html>

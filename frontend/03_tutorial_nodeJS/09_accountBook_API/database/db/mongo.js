@@ -9,9 +9,8 @@ module.exports = function (success,error){
     const mongoose = require("mongoose");
 
     mongoose.set('strictQuery',true);
-    const {DBHOST,DBPORT,DBNAME} = require('../config/mongoConfig');
 
-    mongoose.connect(`mongodb://${DBHOST}:${DBPORT}/${DBNAME}`);
+    mongoose.connect(`mongodb://0.0.0.0:27017/account`);
 
     mongoose.connection.once('open',()=>{
         success();

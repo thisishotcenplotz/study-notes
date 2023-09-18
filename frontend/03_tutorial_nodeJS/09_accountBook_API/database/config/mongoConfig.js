@@ -1,5 +1,5 @@
 module.exports = {
-    DBHOST :'127.0.0.1',
+    DBHOST :'0.0.0.0',
     DBPORT:27017,
     DBNAME:'account'
 }

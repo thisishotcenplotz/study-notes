@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+// mongoose.connect('mongodb://0.0.0.0/account',{useNewUrlParser:true})
+//     .then(()=> console.log('Database Connected'))
+//     .catch(err => console.log(err,'Database connected failed'))
 
 // 设置集合中文档表结构
 let AccountRecordSchema = new mongoose.Schema({
@@ -24,6 +27,6 @@ let AccountRecordSchema = new mongoose.Schema({
 });
 
 //创建模型对象，对文档进行操作
-let AccountRecord = mongoose.model('movie', AccountRecordSchema);
+let AccountRecord = mongoose.model('account', AccountRecordSchema);
 
 module.exports = AccountRecord;

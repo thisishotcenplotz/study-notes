@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 1000px;
+    height: 150px;
+    margin: 100px auto;
+    background-color: #c6ecc6;
+}
+.container h1,.container p {
+    color: #516c51;
+    text-align: center;
+    /*margin-top: 30px;*/
+    /*font-size: 50px;*/
+}
+h1 {
+    font-size: 70px;
+    padding-top: 30px;
+}

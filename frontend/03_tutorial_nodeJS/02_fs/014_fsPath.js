@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 //resolve()
-console.log(path.resolve(__dirname, './index.html'));
+console.log(path.resolve(__dirname, './record.html'));
 
 //sep  分隔符
 console.log(path.sep);

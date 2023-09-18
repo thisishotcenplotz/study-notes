@@ -12,10 +12,10 @@ const server = http.createServer((request,response)=>{
     let {pathname} = new URL(request.url,'http://127.0.0.1');
     console.log(`------------${cnt}:--->${pathname}--->${Date.now()}--------------`);
     if(pathname === '/'){
-        let html = fs.readFileSync(__dirname + '/index.html');
+        let html = fs.readFileSync(__dirname + '/record.html');
         response.end(html);
-    } else if (pathname === '/index.css'){
-        let css = fs.readFileSync(__dirname + '/index.css');
+    } else if (pathname === '/record.css'){
+        let css = fs.readFileSync(__dirname + '/record.css');
         response.end(css);
     } else if (pathname === '/accounts.js'){
         let js = fs.readFileSync(__dirname + '/accounts.js');

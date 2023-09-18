@@ -8,7 +8,7 @@ const server = http.createServer((request,response)=>{
     console.log(`------------${cnt}:${Date.now()}--------------`);
     //需求描述
     //搭建HTTP服务，响应一个4行3列的表格，并且要求表格有各色换行效果，且点击单元格能显示高亮
-    let html = fs.readFileSync(__dirname+'/index.html');
+    let html = fs.readFileSync(__dirname+'/record.html');
 
     response.end(html);
     cnt++;
