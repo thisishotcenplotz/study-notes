@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>箭头函数事件</title>
+    <style>
+      #ad {
+        width: 200px;
+        height: 200px;
+        background: #58a;
+      }
+    </style>
+</head>
+<body>
+  <div id="ad"></div>
+  <script>
+    //需求1: 点击div 2s 后颜色变成 黄色
+    let ad = document.getElementById('ad');
+    ad.addEventListener('click', function (){
+      // let _this = this;
+      // setTimeout(function(){
+      //   _this.style.background = 'green';
+      // },2000)
+      setTimeout(()=>{
+        this.style.background = 'orange';
+      },2000)
+    })
+
+
+    //需求2： 从数组中返回偶数的元素
+    const arr = [1,2,3,4,5,6,7,8,9,10];
+    let rst = arr.filter(item => item%2 === 0);
+
+    //箭头函数【适合】与this无关的回调。定时器，数组的方法回调
+    //箭头函数【不适合】与this有关的回调。事件回调，对象方法
+    //
+  </script>
+</body>
+</html>

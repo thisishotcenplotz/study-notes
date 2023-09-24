@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>箭头函数</title>
+  </head>
+  <body>
+  <script>
+    //ES6允许使用箭头函数
+    let fn = ()=>{
+      console.log('this is arrow function.');
+    }
+    let add = (a,b) =>{
+      return a + b;
+    }
+
+    //1.this是静态的。this始终指向函数声明时所在作用域下的this的值
+    function getName(){
+      console.log(this.name);
+    }
+    let getName2 = ()=>{
+      console.log(this.name);
+    }
+
+    window.name = 'Harvard University';
+    const school = {
+      name:'MIT'
+    };
+
+    // 直接调用
+    getName();
+    getName2();
+    // call方法调用
+    getName.call(school);
+    getName2.call(school);
+
+    //2.不能作为构造函数实例化对象
+    let Person = (name,age) => {
+      this.name = name;
+      this.age = age;
+    }
+    let me = new Person('a',10);
+    console.log(me);
+
+    //3. 不能使用arguments变量
+    let fn = ()=>{
+      console.log(arguments);
+    }
+    fn(1,2,3);
+
+
+    //箭头函数简写
+    let itr = item => item * 2;
+    //
+    //
+    //
+
+  </script>
+
+  </body>
+</html>

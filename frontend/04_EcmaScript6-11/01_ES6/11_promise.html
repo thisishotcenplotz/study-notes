@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Promise 基本语法</title>
+  </head>
+  <body>
+    <script>
+        const p = new Promise(function (resolve,reject){
+            // setTimeout(()=>{
+            //     let data = 'User Data';
+            //     resolve(data);
+            // },1000)
+            let err = '数据读取失败';
+            reject(err);
+        });
+
+        //调用promise对象的then方法
+        p.then((value)=>{
+            console.log(value);
+        },(reason)=>{
+            console.error(reason)
+        })
+
+
+    </script>
+  </body>
+</html>

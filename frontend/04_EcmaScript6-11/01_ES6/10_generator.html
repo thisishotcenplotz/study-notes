@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>生成器</title>
+  </head>
+  <body>
+    <script>
+      //生成器其实就是一个特殊的函数
+      //用来进行异步编程 是一个纯回调函数
+
+      //案例1
+      function * gen(){
+        console.log('Hello Generator');
+      }
+      let itr = gen();
+      itr.next();
+      //案例2
+      //yield 可以当做函数代码的分隔符
+      function * gn(){
+        // console.log(111);
+        yield '一只没有尾巴';
+        // console.log(222);
+        yield '一只没有眼睛';
+        // console.log(333);
+        yield '真奇怪';
+        // console.log(444);
+      }
+      let iitr = gn();
+      console.log(iitr.next());
+      console.log(iitr.next());
+      console.log(iitr.next());
+      console.log(iitr.next());
+
+
+      //
+      //
+      //
+    </script>
+  </body>
+</html>

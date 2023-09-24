@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>set</title>
+  </head>
+  <body>
+      <script>
+          let arr = [1,2,3,3,4,5,4,3,2,1];
+          //1.数组去重
+          let rst = [...new Set(arr)];
+          //2.交集
+          let arr2 = [4,5,6,5,6];
+          // let rst2 = [...new Set(arr)].filter(item =>{
+          //     let s2 = new Set(arr2);
+          //     return s2.has(item);
+          // })
+          // console.log(rst2);
+          let rst2 = [...new Set(arr)]
+              .filter(item => new Set(arr2).has(item));
+          console.log(rst2)
+
+          //3.并集
+          let rst3 =[...new Set([...arr,...arr2])];
+          console.log(rst3);
+
+          //4.差集
+          let rst4 = [...new Set(arr)]
+              .filter(item => !(new Set(arr2).has(item)));
+          console.log(rst4)
+
+      </script>
+  </body>
+</html>

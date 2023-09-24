@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数参数默认值</title>
+</head>
+<body>
+<script>
+  //ES6 允许给函数参数赋值初始值
+  //1.形参初始值.
+  function add(a,b,c=10){
+    return a + b + c;
+  }
+  let rst = add(1,2);
+  console.log(rst);
+
+
+  //2.可以和结构赋值结合使用
+  function connect({host='127.0.0.1',username,password,port='3306'}){
+    console.log(host);
+    console.log(username);
+    console.log(password);
+    console.log(port);
+  }
+  connect({
+    host:'localhost',
+    username:'root',
+    password:'root',
+    port:'3306'
+  })
+  //
+  //
+  //
+</script>
+</body>
+</html>

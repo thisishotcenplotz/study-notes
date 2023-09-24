@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>扩展运算符</title>
+</head>
+<body>
+<script>
+  // [...] 扩展运算符将[数组] 抓暖为逗号分隔的 [参数序列]
+  const tfboys = ['易烊千玺','王源','王俊凯'];
+
+  function fn(){
+    console.log(arguments);
+  }
+  fn(...tfboys);
+
+</script>
+
+</body>
+</html>

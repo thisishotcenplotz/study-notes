@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Let</title>
+  </head>
+  <body>
+    <script>
+      //声明变量
+      let a;
+      let b,c,d;
+      let e =100, f='abc',g=[];
+
+      //1.变量不能重复声明
+      let star = '罗志祥';
+
+      //2.块级作用域
+      {
+
+        let girl = '邓紫棋';
+        console.log(girl);
+      }
+
+      //3.不存在变量提升
+
+      //4.不影响作用域链
+      {
+        let school = 'harvard';
+        function fs(){
+          console.log(school);
+        }
+        fn();
+      }
+
+
+    </script>
+
+  </body>
+</html>

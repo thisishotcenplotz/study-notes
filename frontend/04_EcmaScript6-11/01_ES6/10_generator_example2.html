@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>生成器函数实例</title>
+  </head>
+  <body>
+    <script>
+        //模拟获取 用户数据 订单数据 商品数据
+
+        function getUsers(){
+            setTimeout(()=>{
+                let data = 'User Data';
+                itr.next(data);
+            },1000)
+        }
+
+        function getOrders(){
+            setTimeout(()=>{
+                let data = 'Order Data'
+                itr.next(data);
+            },1000)
+        }
+
+        function getProduct(){
+            setTimeout(()=>{
+                let data = 'Product Data';
+                itr.next(data);
+            },1000)
+        }
+
+        function * gen(){
+            let users = yield getUsers();
+            console.log(users);
+            let order = yield getOrders();
+            console.log(order)
+            let product = yield getProduct();
+            console.log(product);
+        }
+        let itr = gen();
+        itr.next();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>rest参数</title>
+</head>
+<body>
+<script>
+  //ES6 引入rest参数，用于获取函数的实参，用来代替arguments
+  function data(...args){
+    console.log(args);
+  }
+  data('娜扎','紫琪','热巴','一桐','慧敏');
+  function fn(a,b,...args){
+    console.log(a);
+    console.log(b);
+    console.log(args);
+  }
+  //
+  //
+  //
+  //
+</script>
+
+</body>
+</html>

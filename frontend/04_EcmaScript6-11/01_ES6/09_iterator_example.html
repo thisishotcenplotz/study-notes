@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>迭代器</title>
+  </head>
+  <body>
+    <script>
+      //声明一个数组
+      const beauty = {
+          name:'beautiful girls',
+          girls :[
+              '热巴',
+              '娜扎',
+              '慧敏',
+              '燕姿',
+              '一桐',
+              '紫琪'
+          ],
+          [Symbol.iterator](){
+              let index = 0;
+              let _this = this;
+              return {
+                  next:function(){
+                      if(index < _this.girls.length){
+                          const rst =  {value:_this.girls[index],done:false};
+                          index++;
+                          return rst;
+                      }
+                      else{
+                          return {value: undefined,done: true}
+                      }
+                  }
+              };
+          }
+      }
+      for(let girl of beauty){
+          console.log(girl);
+      }
+
+      // beauty.girls.forEach(girl => console.log(girl))
+      //
+      //
+      //
+      //
+      //
+    </script>
+  </body>
+</html>
