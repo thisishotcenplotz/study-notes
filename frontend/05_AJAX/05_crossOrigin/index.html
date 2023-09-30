@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+</head>
+<body>
+    <h3>Hello World</h3>
+    <button>获取用户数据</button>
+    <script>
+        const btn = document.querySelectorAll('button')[0];
+
+        btn.onclick = function (){
+            const x = new XMLHttpRequest();
+            x.open('GET','/data');
+            x.send();
+            x.onreadystatechange = function () {
+                if(x.readyState === 4){
+                    if(x.status >= 200 && x.status < 300){
+                        console.log(x.response);
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

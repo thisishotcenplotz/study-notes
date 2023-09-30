@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Axios</title>
+        <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/1.5.0/axios.min.js"></script>
+    </head>
+    <body>
+        <button>GET</button>
+        <button>POST</button>
+        <button>AJAX</button>
+        <script>
+            const btns = document.querySelectorAll('button');
+
+            axios.defaults.baseURL = 'http://127.0.0.1:8888'
+            btns[0].onclick = ()=>{
+                axios.get('/axios-server',{
+                    params:{
+                        id:123,
+                        vip:7
+                    },
+                    headers:{
+                        name:'George',
+                        age:'18'
+                    }
+                }).then(value => console.log(value))
+            }
+
+            btns[1].onclick = ()=>{
+                axios.post('/axios-server',{
+                    headers: {
+                        name:'Hotcenplotz',
+                        job:'Robber'
+                    },
+                    params: {
+                        height:180,
+                        weight:170
+
+                    },
+                    data:{
+                        username:'admin',
+                        password:'admin'
+                    }
+                }).then(value => {
+                    console.log(value)
+                })
+            }
+
+            btns[2].onclick = ()=>{
+                axios({
+                    method:'POST',
+                    url:'/axios-server',
+                    params:{
+                        vip:10,
+                        level:30
+                    },
+                    headers:{
+                        a:100,
+                        b:200
+                    },
+                    data: {
+                        username:'admin',
+                        password:'admin'
+                    }
+                }).then(response =>{
+                    console.log(response.status);
+                    console.log(response.statusText);
+                    console.log(response.headers);
+                    console.log(response.data);
+                })
+            }
+
+        </script>
+    </body>
+</html>

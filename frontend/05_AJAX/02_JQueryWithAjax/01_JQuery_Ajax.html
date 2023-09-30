@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>JQuery 发送 AJAX 请求</title>
+      <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <style>
+          h3 {
+            text-align: center;
+            font-size: 50px;
+          }
+          .btn {
+            width: 150px;
+            height: 40px;
+            color: whitesmoke;
+            text-align: center;
+            line-height: 40px;
+            padding: 0;
+            font-size: 18px;
+            margin-right: 20px;
+          }
+          .a{
+            background-color: blue;
+          }
+          .b{
+            background-color: red;
+          }
+          .c{
+            background-color: deepskyblue;
+          }
+
+          #button {
+          }
+      </style>
+  </head>
+  <body>
+      <h3>Sending Ajax requests with JQuery</h3>
+      <hr>
+      <button class="btn a">GET</button>
+      <button class="btn b">POST</button>
+      <button class="btn c">通用型方法 ajax</button>
+
+      <script>
+        $('button').eq(0).click(()=>{
+            $.get('http://127.0.0.1:8888/jquery',{a:100,b:200},(data)=>{
+                console.log(data);
+            },'json')
+        });
+
+        $('button').eq(1).click(()=>{
+            $.post('http://127.0.0.1:8888/jquery',{a:100,b:200},(data)=>{
+                console.log(data);
+            })
+        });
+
+        $('button').eq(2).click(()=>{
+            $.ajax({
+                url:'http://127.0.0.1:8888/jquery',
+                data:{a:100,b:200},
+                type:'GET',
+                success:(data)=>{
+                    console.log(data)
+                },
+                error:()=>{
+                    console.log('error')
+                },
+                timeout:()=>{
+                    console.log('timeout.')
+                },
+                headers:{
+                    a:100,
+                    b:3333
+                }
+
+            })
+        })
+
+      </script>
+
+  </body>
+</html>
