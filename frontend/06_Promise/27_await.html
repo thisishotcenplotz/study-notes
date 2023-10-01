@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>await表达式的执行顺序</title>
+</head>
+<body>
+  <script>
+        // 结论：如果有同步代码和异步代码同时出现，一定是先执行同步，再执行异步
+        async function main(){
+            console.log(111);
+            let rst = await Promise.resolve('ok');
+            console.log(rst);
+            console.log(222);
+            console.log(333);
+            console.log(444);
+            let rstt = await Promise.resolve('okk');
+            console.log(rstt);
+        }
+        main();
+        console.log(555);
+
+  </script>
+
+</body>
+</html>

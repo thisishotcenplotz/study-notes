@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/1.5.0/axios.min.js"></script>
+        <title>axios 取消请求</title>
+    </head>
+    <body>
+        <h3>基本使用</h3>
+        <hr>
+        <button style="background-color: dodgerblue;">发送GET请求</button>
+        <button style="background-color: orange;">取消GET请求</button>
+
+
+
+        <script>
+            const buttons = document.querySelectorAll('button');
+            let cancel = null;
+
+            buttons[0].onclick = function () {
+                if (cancel !== null) {
+                    cancel()
+                }
+                axios({
+                    method: 'GET',
+                    url: 'http://localhost:3000/posts',
+                    cancelToken: new axios.CancelToken(function (c) {
+                        cancel = c;
+                    })
+                }).then(response => {
+                    console.log(response.data);
+                    cancel = null;
+                })
+
+            }
+
+
+        </script>
+
+    </body>
+</html>

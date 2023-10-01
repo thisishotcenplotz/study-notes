@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/1.5.0/axios.min.js"></script>
+        <title>axios.request</title>
+    </head>
+    <body>
+        <h3>基本使用</h3>
+        <hr>
+        <button style="background-color: dodgerblue;">发送GET请求</button>
+        <button style="background-color: orange;">发送POST请求</button>
+        <button style="background-color: darkseagreen;">发送PUT请求</button>
+        <button style="background-color: red;">发送DELETE请求</button>
+
+
+        <script>
+            const btns = document.querySelectorAll('button');
+
+            btns[0].onclick = function () {
+                axios.request({
+                    method:'GET',
+                    url:'http://localhost:3000/comments'
+                }).then(response => {
+                    console.log(response);
+                })
+            }
+
+            btns[1].onclick = function () {
+                axios.post('http://localhost:3000/comments',{
+                    'body':'大盗贼学前端',
+                    'postId':2
+                }).then(value => {
+                    console.log(value);
+                })
+            }
+        </script>
+
+    </body>
+</html>

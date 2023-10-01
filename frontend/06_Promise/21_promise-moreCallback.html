@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>指定多个回调函数的执行情况</title>
+</head>
+<body>
+  <script>
+        //改变Promise状态和指定回调函数执行，正常情况下是先指定回调再改变状态。可以先改变状态再指定回调。
+        //若执行器函数中为同步任务，则先修改状态，后指定回调
+        //若执行器为异步任务，则先指定回调再更改状态
+        const p1 = new Promise((resolve, reject) => {
+            //同步
+            // resolve('ok');
+
+            //异步
+            setTimeout(()=>{
+                resolve('ok');
+            },1000);
+        }).then(value => console.log(value),reason => console.log(reason))
+
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>await</title>
+</head>
+<body>
+  <script>
+        //
+        async function main(){
+            //1. 如果await右侧为非Promise类型的数据; await 后面的值是什么，得到的结果是什么
+            // let rs = 100;
+            // console.log(rs)
+
+            //2.如果await右侧为Promise成功类型的数据
+            // let rs = await new Promise(resolve =>{
+            //     resolve('ok');
+            // })
+
+            //3.如果await右侧为失败的Promise类型数据，需要try。。。catch
+            try{
+                let rs = await new Promise((resolve, reject) => {
+                    reject('error')
+                })
+            }catch (e){
+                console.log(e);
+            }
+        }
+        main();
+
+  </script>
+
+</body>
+</html>

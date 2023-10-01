@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>catch方法</title>
+</head>
+<body>
+  <script>
+        //Catch 用来指定失败回调方法
+        //
+        //then方法中是可以传两个参数，当然也可以不传递，当然也可以单独来指定catch回调函数
+        //catch方法也返回值
+        const p1 = new Promise((resolve, reject) => {
+            reject('error')
+        }).catch(reason => {
+            console.log(reason);
+            return reason;
+        });
+
+
+  </script>
+
+</body>
+</html>

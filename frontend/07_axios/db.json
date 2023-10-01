@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "title": "json-self",
+      "author": "hotcenplotz"
+    },
+    {
+      "title": "今天天气不错",
+      "author": "Der Hotcenplotz",
+      "id": 3
+    },
+    {
+      "title": "今天天气不错",
+      "author": "hotcenplotz",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "body": "大盗贼学前端",
+      "postId": 2,
+      "id": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

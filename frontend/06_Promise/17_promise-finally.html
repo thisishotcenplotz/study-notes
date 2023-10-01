@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>catch方法</title>
+</head>
+<body>
+  <script>
+        //finally是ES9（2018年）新增的特性，表述无论Promise变成了什么状态，最终都会执行
+        //finally方法的回调函数时不接受参数的
+        //
+        const p1 = new Promise((resolve, reject) => {
+            resolve('ok');
+        }).then(value => {
+            console.log(value);
+        }).catch(reason => {
+            console.log(reason);
+        }).finally(()=>{
+            console.log('this is finally...');
+        })
+
+
+
+
+  </script>
+
+</body>
+</html>

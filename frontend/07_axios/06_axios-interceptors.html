@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/axios/1.5.0/axios.min.js"></script>
+        <title>axios interceptors</title>
+    </head>
+    <body>
+        <h3>基本使用</h3>
+        <hr>
+        <button style="background-color: dodgerblue;">发送GET请求</button>
+        <button style="background-color: orange;">发送POST请求</button>
+        <button style="background-color: darkseagreen;">发送PUT请求</button>
+        <button style="background-color: red;">发送DELETE请求</button>
+
+
+        <script>
+            const buttons = document.querySelectorAll('button');
+
+            // Add a request interceptor
+            axios.interceptors.request.use(function (config) {
+                console.log('Request interceptor: success');
+                config.params = {a:100};
+                config.timeout = 2000;
+                return config;
+            },function (error){
+                console.log('Request interceptor: failed');
+                return Promise.reject(error);
+            })
+
+            // Add a response interceptor
+            axios.interceptors.response.use(function (response) {
+                console.log('Response interceptor: success');
+                return response.data;
+            },function (error) {
+                console.log('Response interceptor: failed');
+                return Promise.reject(error);
+            })
+
+            axios({
+                method:'GET',
+                url:'http://localhost:3000/posts'
+            }).then(value => {
+                console.log(value);
+            })
+        </script>
+
+    </body>
+</html>

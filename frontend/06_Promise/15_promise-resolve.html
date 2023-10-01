@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>resolve方法</title>
+</head>
+<body>
+  <script>
+        //Promise 下的resolve方法：将一个普通的值转化为Promise类型的数据
+        //分两种情况：
+        //1.当resolve方法参数为非Promise对象，则返回的结果为成功的Promise对象
+        //2.当resolve方法参数为Promise对象，则参数对象的状态和结果将直接影响resolve方法的返回值的那个对象的状态和结果
+
+        //情况1
+        const p1 = Promise.resolve(123);
+        const p2 = Promise.resolve('123');
+        const p3 = Promise.resolve([1,2,3]);
+
+        //情况2
+        const p4 = Promise.resolve(new Promise((resolve, reject) => {
+            resolve('success');
+        }));
+
+        const p5 = Promise.resolve(new Promise((resolve, reject) => {
+            reject('error');
+        }));
+
+
+  </script>
+
+</body>
+</html>

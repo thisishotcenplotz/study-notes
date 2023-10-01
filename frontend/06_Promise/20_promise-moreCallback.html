@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>指定多个回调函数的执行情况</title>
+</head>
+<body>
+  <script>
+        //问题：一个Promise实例对象指定多个成/失败的回到函数，都会进行调用吗？
+        const p1 = new Promise((resolve, reject) => {
+            // resolve('ok');
+            throw 'error'
+        }).then(value =>{
+            console.log(value);
+        } ,reason => {
+            console.log(reason);
+        }).then(value => {
+            console.log(value);
+        },reason => {
+            console.log(reason);
+        })
+
+
+
+  </script>
+
+</body>
+</html>
