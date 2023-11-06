@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="../../js/vue.js"></script>
+        <title>深度监视</title>
+    </head>
+    <body>
+        <div id="root">
+            <h2>今天天气很{{info}}</h2>
+            <button @click="changeWeather">切换天气</button>
+            <h3>a的值是：{{numbers.a}}</h3>
+            <button @click="numbers.a++">点我+1</button>
+
+            <h3>b的值是：{{numbers.b}}</h3>
+            <button @click="numbers.b++">点我+1</button>
+        </div>
+        <script>
+            new Vue({
+                el:'#root',
+                data:{
+                    isHot:true,
+                    numbers:{
+                        a:1,
+                        b:1
+                    }
+                },
+                computed:{
+                    info(){
+                        return this.isHot? '炎热':'凉爽'
+                    }
+                },
+                methods:{
+                    changeWeather(){
+                        this.isHot = !this.isHot
+                    },
+                    add(){
+                        this.numbers.a ++
+                    }
+                },
+                watch:{
+                    isHot:{
+                        handler(newValue,oldValue){
+                            console.log('isHot被修改了')
+                            console.log(newValue)
+                            console.log(oldValue);
+                        }
+                    },
+                    numbers:{
+                        deep:true,
+                        handler(newValue, oldValue) {
+                            console.log(oldValue,'--->',newValue)
+                        }
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

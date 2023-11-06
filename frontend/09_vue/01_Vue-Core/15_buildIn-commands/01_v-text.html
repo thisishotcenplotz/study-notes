@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="../../js/vue.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <!--
+            v-bind: 单向绑定解析表达式
+            v-model: 双向数据绑定
+            v-for: 遍历数组、对象 、字符串
+            v-on: 绑定事件监听，简写@
+            v-if: 条件渲染
+            v-else: 条件渲染
+            v-show: 条件渲染（动态控制节点是否展示）
+            v-text: 向所在的节点中渲染文本内容
+        -->
+        <div id="root">
+            <div v-text="name"></div>
+        </div>
+
+        <script>
+            const vm = new Vue({
+                el:'#root',
+                data:{
+                    name:'George'
+                }
+            })
+        </script>
+    </body>
+</html>

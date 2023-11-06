@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="../../js/vue.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="root">
+            <input type="text" placeholder="请输入名字" v-model="keyWord">
+            <ul>
+                <li v-for="p in filPerson" :key="p.id">
+                    {{ p.name }} {{p.age}} {{p.gender}}
+                </li>
+            </ul>
+        </div>
+
+        <script>
+            // new Vue({
+            //     el:'#root',
+            //     data:{
+            //         keyWord:""
+            //         ,personList:[
+            //             {id:1,name:'马冬梅',age:18,gender:'女'}
+            //             ,{id:2,name:'周冬雨',age:19,gender:'女'}
+            //             ,{id:3,name:'周杰伦',age:20,gender:'男'}
+            //             ,{id:4,name:'温兆伦',age:21,gender:'男'}
+            //         ],
+            //         filPerson:[]
+            //     },
+            //     watch:{
+            //         keyWord: {
+            //             immediate:true,
+            //             handler(val){
+            //                 this.personList.filter((p)=>{
+            //                     this.filPerson = this.personList.filter((p)=>{
+            //                         return p.name.indexOf(val) !== -1
+            //                     })
+            //                 })
+            //             }
+            //         }
+            //     }
+            // })
+
+
+            new Vue({
+                el:'#root',
+                data:{
+                    keyWord:""
+                    ,personList:[
+                        {id:1,name:'马冬梅',age:18,gender:'女'}
+                        ,{id:2,name:'周冬雨',age:19,gender:'女'}
+                        ,{id:3,name:'周杰伦',age:20,gender:'男'}
+                        ,{id:4,name:'温兆伦',age:21,gender:'男'}
+                    ]
+                },
+                computed:{
+                    filPerson(){
+                        return this.personList.filter((p)=>{
+                            return p.name.indexOf(this.keyWord) !== -1
+                        })
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

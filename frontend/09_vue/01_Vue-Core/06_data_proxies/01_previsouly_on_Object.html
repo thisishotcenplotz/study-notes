@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>回顾Object.defineproperty方法</title>
+    </head>
+    <body>
+    <script>
+        let number = 18;
+        let person = {
+            name:'张三',
+            gender:'男'
+        }
+
+        Object.defineProperty(person,'age',{
+            // value:18,
+            // enumerable:true,
+            // writable:true,
+            // configurable:true
+            get:function (){
+                return number
+            },
+            set:function (vul){
+                number = vul;
+            }
+        })
+        console.log(person)
+    </script>
+
+    </body>
+</html>

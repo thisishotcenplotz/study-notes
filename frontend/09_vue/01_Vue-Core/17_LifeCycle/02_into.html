@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="../../js/vue.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="root">
+            <h2>当前的n值是:{{n}}</h2>
+            <button @click="add">点我n+1</button>
+        </div>
+
+        <script>
+            new Vue({
+                el:'#root',
+                data:{
+                    n:1
+                },
+                methods:{
+                    add(){
+                        this.n++
+                    }
+                },
+                beforeCreate(){
+
+                },
+                created(){
+
+                },
+                beforeMount(){
+
+                },
+                mounted(){
+
+                },
+                beforeUpdate(){
+
+                },
+                updated(){
+
+                },
+                beforeDestroy(){
+
+                },
+                destroyed(){
+
+                }
+
+
+            })
+
+        </script>
+    </body>
+</html>
