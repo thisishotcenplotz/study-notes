@@ -1,3 +1,4 @@
 .idea/
 venv
 .gitignore
+./bigdata/spark-tutorial/data/statement.csv
