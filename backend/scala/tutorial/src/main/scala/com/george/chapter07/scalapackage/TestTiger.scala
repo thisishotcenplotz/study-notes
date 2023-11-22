@@ -13,3 +13,7 @@ object TestTiger {
   }
 
 }
+
+class Employee{
+
+}
