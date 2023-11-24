@@ -9,7 +9,7 @@ object Test {
     val connection = DriverManager.getConnection(url,username,password)
 
     val statement = connection.createStatement()
-    val query = "select * from wlyxls_c.shop_sales_detail limit 200;"
+    val query = "select * from wlyxls_c.shop_sales_detail limit 20000;"
 
     val resultSet = statement.executeQuery(query)
     val meta = resultSet.getMetaData()
@@ -21,6 +21,7 @@ object Test {
         val value = resultSet.getString(name)
         println(s"${name}:${value}")
       }
+      println("----------------------------")
     }
 
     resultSet.close()
