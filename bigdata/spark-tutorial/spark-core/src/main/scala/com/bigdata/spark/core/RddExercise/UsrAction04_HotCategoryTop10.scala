@@ -46,19 +46,6 @@ object UsrAction04_HotCategoryTop10 {
       }
     )
 
-
-    // 2. 将数据转换结构
-    //    点击的场合：（品类ID，（1,0,0））
-    //    下单的场合：（品类ID，（0,1,0））
-    //    支付的场合：（品类ID，（0,0,1））
-
-
-
-    // 3. 将相同的品类ID的数据进行分组聚合
-    //     （品类ID，（点击,下单,支付））
-
-
-    // 4. 将统计结果根据数量进行降序处理，取前10
     val accVal = accumulator.value
     val categories = accVal.map(_._2)
     val sortResult = categories.toList.sortWith(
