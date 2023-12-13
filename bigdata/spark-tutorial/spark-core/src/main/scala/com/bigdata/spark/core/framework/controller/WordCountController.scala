@@ -10,8 +10,8 @@ class WordCountController extends localController{
   // 调度
   def dispatch(): Unit = {
     val array = wordCountService.dataAnalysis()
-
-    array.foreach(println)
+//
+//    array.foreach(println)
 
 
   }
