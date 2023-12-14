@@ -19,6 +19,8 @@ object SparkSQL03_UDAF {
 
 
 
+
+
     //TODO 关闭环境
     spark.close()
   }
