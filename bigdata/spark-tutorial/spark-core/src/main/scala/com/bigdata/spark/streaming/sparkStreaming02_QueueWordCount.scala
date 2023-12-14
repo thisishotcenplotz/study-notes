@@ -13,6 +13,8 @@ object sparkStreaming02_QueueWordCount {
     // TODO 创建环境对象
     val conf = new SparkConf().setMaster("local[*]").setAppName("spark streaming")
     val streamSpark = new StreamingContext(conf, Seconds(3))
+    val message = streamSpark.receiverStream(new MyReceiver)
+    message.print()
 
 
 
@@ -29,12 +31,15 @@ object sparkStreaming02_QueueWordCount {
   // 自定义数据采集器
   // 1. 继承Receiver，定义泛型
   class MyReceiver extends Receiver[String](StorageLevel.MEMORY_ONLY){
+    private var flag = true
+
     override def onStart(): Unit = {
       new Thread(new Runnable {
         override def run(): Unit = {
-          while (true){
+          while (flag){
             val message = new Random().nextInt(10).toString
             val data = s"当前数据为：${message}"
+            store(data)
             Thread.sleep(500)
           }
         }
@@ -42,7 +47,7 @@ object sparkStreaming02_QueueWordCount {
     }
 
     override def onStop(): Unit = {
-
+      flag = false
     }
   }
 
