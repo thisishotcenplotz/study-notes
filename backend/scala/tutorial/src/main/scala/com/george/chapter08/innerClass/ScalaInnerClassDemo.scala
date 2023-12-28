@@ -31,6 +31,12 @@ class ScalaOuterClass {
       println(s"name=${myOuter.name}  ---> salary:${myOuter.salary}")
     }
 
+
+    // 下面的 ScalaOuterClass#ScalaInnerClass 的类型投影的作用是屏蔽外部对象对内部类对象的影响
+    def test(ic:ScalaOuterClass#ScalaInnerClass): Unit = {
+      println(ic)
+    }
+
   }
 }
 
