@@ -1,29 +1,31 @@
-package com.tutorial.spark.Spark01Source
+package com.george
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
 
-object Demo04_CSV {
+object Demo03_CSV {
 
   def main(args: Array[String]): Unit = {
     val spark = SparkSession.builder().master("local[3]").appName("source csv").getOrCreate()
     spark.sparkContext.setLogLevel("ERROR")
 
     // define schema
-    val csvSchema = new StructType()
-      .add("id", IntegerType)
-      .add("name", StringType)
-      .add("age", IntegerType)
+    val csvSchema = StructType(Array(
+      StructField("id", IntegerType),
+      StructField("name", StringType),
+      StructField("age", IntegerType)
+    ))
 
+    import spark.implicits._
     spark.readStream
-      .schema(csvSchema)
+      .format("csv")
       .option("sep",",")
-      .csv("data/csv")
+      .schema(csvSchema)
+      .load("data/csv")
       .writeStream
       .format("console")
       .outputMode("append")
       .start()
       .awaitTermination()
   }
-
 }

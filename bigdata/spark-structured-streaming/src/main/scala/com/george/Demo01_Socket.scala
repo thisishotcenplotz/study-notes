@@ -1,4 +1,4 @@
-package com.tutorial.spark.Spark01Source
+package com.george
 
 import org.apache.spark.sql.SparkSession
 

@@ -1,7 +1,0 @@
-1 zhangsan 20
-2 lisi 30
-3 wangwu 40
-4 zhaoliu 50
-5 tianqi 40
-6 zhouba 30
-7 liujiu 20
