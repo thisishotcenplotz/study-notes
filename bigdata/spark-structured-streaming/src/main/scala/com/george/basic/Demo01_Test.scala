@@ -1,4 +1,4 @@
-package com.george
+package com.george.basic
 
 object Demo01_Test {
   def main(args: Array[String]): Unit = {

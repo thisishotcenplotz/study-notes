@@ -1,4 +1,4 @@
-package com.george
+package com.george.basic
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
@@ -15,8 +15,6 @@ object Demo03_CSV {
       StructField("name", StringType),
       StructField("age", IntegerType)
     ))
-
-    import spark.implicits._
     spark.readStream
       .format("csv")
       .option("sep",",")

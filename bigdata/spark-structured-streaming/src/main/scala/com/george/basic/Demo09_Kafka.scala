@@ -1,8 +1,8 @@
-package com.george
+package com.george.basic
 
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
-import org.apache.spark.sql.types.{DataTypes, StructField, StructType}
+import org.apache.spark.sql.types.{DataTypes, StructType}
 
 object Demo09_Kafka {
   def main(args: Array[String]): Unit = {
