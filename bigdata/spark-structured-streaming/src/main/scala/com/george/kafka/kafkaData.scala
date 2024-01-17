@@ -29,7 +29,11 @@ object kafkaData {
       .awaitTermination()
 
 
-
+"""
+      |git remote add origin git@github.com:thisishotcenplotz/tmp.git
+      |git branch -M main
+      |git push -u origin main
+      |""".stripMargin
 
   }
 
