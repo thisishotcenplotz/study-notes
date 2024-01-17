@@ -15,29 +15,21 @@ object kafkaData {
       .option("subscribe", "deltaLake")
       .load
 
-    kafkaDeltaLakeData.select($"topic",$"partition",$"offset",$"value")
+    kafkaDeltaLakeData.printSchema()
+
+    kafkaDeltaLakeData.select($"topic",$"partition",$"offset",$"value",$"timestamp")
+      .withWatermark("timestamp","10 minutes")
       .groupBy($"topic",$"partition")
       .agg(
         max("offset").alias("maxOffset"),
         sum("offset").alias("sumOffset")
       )
-      .orderBy($"partition".desc)
       .writeStream
       .format("console")
-      .outputMode("complete")
+      .outputMode("update")
       .start()
       .awaitTermination()
 
-
-"""
-      |git remote add origin git@github.com:thisishotcenplotz/tmp.git
-      |git branch -M main
-      |git push -u origin main
-      |
-      |git config --global user.name "Your Name"
-      |git config --global user.email you@example.com
-      |
-      |""".stripMargin
 
   }
 
