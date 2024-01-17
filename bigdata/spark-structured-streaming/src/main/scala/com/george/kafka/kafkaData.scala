@@ -33,6 +33,10 @@ object kafkaData {
       |git remote add origin git@github.com:thisishotcenplotz/tmp.git
       |git branch -M main
       |git push -u origin main
+      |
+      |git config --global user.name "Your Name"
+      |git config --global user.email you@example.com
+      |
       |""".stripMargin
 
   }
